@@ -43,7 +43,7 @@
 vs코드 열고 터미널에서 
 git clone https://github.com/s0obang/busket.git
 
-클론된 폴더 경로에서
+클론된 폴더 경로에서 <br/>
 git branch 내브랜치명
 git checkout 내브랜치명
 git add .
