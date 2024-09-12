@@ -44,26 +44,26 @@ vs코드 열고 터미널에서
 git clone https://github.com/s0obang/busket.git
 
 클론된 폴더 경로에서 <br/>
-git branch 내브랜치명
-git checkout 내브랜치명
-git add .
-git commit -m "first commit"
+git branch 내브랜치명 <br/>
+git checkout 내브랜치명 <br/>
+git add . <br/>
+git commit -m "first commit" <br/>
+ <br/> <br/>
 
+장고 세팅하기 <br/>
 
-장고 세팅하기
+python -m venv venv <br/>
+-> 옆에 venv 폴더 생성된 거 확인 <br/>
 
-python -m venv venv
--> 옆에 venv 폴더 생성된 거 확인
+.\venv\Scripts\activate 또는 source venv/scripts/activate <br/>
+-> 가상환경 실행, 실행되면 앞에 괄호로 (venv) 가 떠요 <br/>
+ <br/> <br/>
+pip install django <br/>
+python manage.py migrate <br/>
+python manage.py runserver <br/>
+-> 하면 밑에 127.0.0.1:8000 이라는 url이 뜹니다. 컨트롤 + url 클릭하면 접속됩니다~ <br/> <br/>
 
-.\venv\Scripts\activate 또는 source venv/scripts/activate
--> 가상환경 실행, 실행되면 앞에 괄호로 (venv) 가 떠요
-
-pip install django
-python manage.py migrate
-python manage.py runserver
--> 하면 밑에 127.0.0.1:8000 이라는 url이 뜹니다. 컨트롤 + url 클릭하면 접속됩니다~
-
-장고 실행하기
-python manage.py runserver 
-
-생성한 가상환경 폴더는 깃허브에 올리지 않는 게 좋기때문에 이름을 venv 또는 myvenv로 해주세요
+장고 실행하기 <br/>
+python manage.py runserver  <br/>
+ <br/> <br/>
+생성한 가상환경 폴더는 깃허브에 올리지 않는 게 좋기때문에 이름을 venv 또는 myvenv로 해주세요 <br/>
