@@ -9,28 +9,34 @@
     <title>BUSKET</title>
 </head>
 
-<body>
-    <header class="main-header">
-        <div class="logo">
-            <img src="{% static 'img/logo.svg' %}" alt="logo">
-        </div>
-        <ul class="category">
-            <li class="buy">BUY</li>
-            <li class="bucket">BUCKET</li>
-            <li class="share">SHARE</li>
-            <li class="my">MY</li>
-        </ul>
-    </header>
-    {% block content %}
+<body style="background-image:url({% static 'img/background.svg' %})">
+    <div class="wrap">
+        <header class="main-header">
+            <div class="logo">
+                <a href="/">
+                <img src="{% static 'img/logo.svg' %}" alt="logo"/>
+            </a>
+            </div>
+            <ul class="category">
+                <li class="buy">BUY</li>
+                <li class="bucket">BUCKET</li>
+                <li class="share">SHARE</li>
+                <li class="my">MY</li>
+            </ul>
+        </header>
+        <main>
+            {% block content %}
 
-    {% endblock%}
-    <footer class="main-footer">
-        <div class="inner">
-            <p>ⓒSSWU_WAGI 2기 team. WEB</p>
-            <p class="member">BACKEND 조수빈 손정민 <br /> FRONTEND 최수진 백수진 김가윤</p>
-        </div>
-    </footer>
+            {% endblock %}
+        </main>
 
+        <footer class="main-footer">
+            <div class="inner">
+                <p>ⓒ SSWU_WAGI 2기 Team.WEB</p>
+                <p class="member">BACKEND 조수빈 손정민 <br /> FRONTEND 최수진 백수진 김가윤</p>
+            </div>
+        </footer>
+    </div>
 </body>
 
 </html>
