@@ -1,0 +1,80 @@
+* {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.wrap main{
+    flex: 1;
+}
+
+
+.wrap header {
+    padding: 10px 40px;
+    width: 90%;
+    height: 60px;
+    border-radius: 50px;
+    margin: 20px auto;
+    display: flex;
+    background-color: #1882e5e2;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wrap header .logo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrap header .logo img {
+    width: 64px;
+    height: 68px;
+}
+
+.wrap header ul {
+    font-size: 25px;
+    font-weight: 500;
+    display: flex;
+    list-style: none;
+    gap: 5px;
+}
+
+.wrap header ul li {
+    text-decoration: underline;
+    display: flex;
+
+    padding: 0 15px;
+    border-radius: 20px;
+    align-items: center;
+
+}
+
+.wrap header ul li:hover {
+    background-color: #FFD950;
+    cursor: pointer;
+}
+
+.wrap .main-footer {
+    width: 90%;
+    margin: 10px auto;
+    background-color: #d9d9d970;
+    padding: 20px 40px;
+    border-radius: 30px;
+    color: #333;
+    font-size: 20px;
+    font-weight: normal;
+}
