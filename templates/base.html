@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <title>BUSKET</title>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <img src="{% static 'img/logo.svg' %}" alt="logo">
+        </div>
+        <ul class="category">
+            <li class="buy">BUY</li>
+            <li class="bucket">BUCKET</li>
+            <li class="share">SHARE</li>
+            <li class="my">MY</li>
+        </ul>
+    </header>
+    {% block content %}
+
+    {% endblock%}
+    <footer class="main-footer">
+        <div class="inner">
+            <p>ⓒSSWU_WAGI 2기 team. WEB</p>
+            <p class="member">BACKEND 조수빈 손정민 <br /> FRONTEND 최수진 백수진 김가윤</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
