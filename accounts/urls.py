@@ -7,4 +7,4 @@ urlpatterns = [
     path('signup/', signup, name='signup'),
     path('login/', login, name='login'),
     path('my/', my, name='my'),
-]
+] 
