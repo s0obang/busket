@@ -18,24 +18,24 @@
             </a>
             </div>
             <ul class="category">
-                <li class="buy">BUY</li>
-                <li class="bucket">BUCKET</li>
-                <li class="share">SHARE</li>
-                <li class="my">MY</li>
+                <li class="buy"><a href="{% url 'buket:buy' %}">BUY</a></li>
+                <li class="bucket"><a href="{% url 'buket:buket' %}">BUCKET</a></li>
+                <li class="share"><a href="{% url 'buket:share' %}">SHARE</a></li>
+                <li class="my"><a href="{% url 'accounts:my' %}">MY</a></li>
             </ul>
         </header>
-        <main>
+        
             {% block content %}
 
             {% endblock %}
-        </main>
+        
+            <footer class="main-footer">
+                <div class="inner">
+                    <p>ⓒ SSWU_WAGI 2기 Team.WEB</p>
+                    <p class="member">BACKEND 조수빈 손정민 <br /> FRONTEND 최수진 백수진 이가윤</p>
+                </div>
+            </footer>
 
-        <footer class="main-footer">
-            <div class="inner">
-                <p>ⓒ SSWU_WAGI 2기 Team.WEB</p>
-                <p class="member">BACKEND 조수빈 손정민 <br /> FRONTEND 최수진 백수진 김가윤</p>
-            </div>
-        </footer>
     </div>
 </body>
 
