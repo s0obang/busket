@@ -13,7 +13,7 @@ def signup(request):
                 password=request.POST['password1'],
             )
             auth.login(request, user)
-            return redirect('home:home')
+            return redirect('home')
         return render(request, 'signup.html')
     return render(request, 'signup.html')
 
@@ -25,7 +25,7 @@ def login(request):
         user=authenticate(request, username=username, password=password)
         if user is not None:
             auth.login(request, user)
-            return redirect('home:home')
+            return redirect('home')
         else:
             return render(request, 'login.html')
     else:
