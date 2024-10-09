@@ -17,10 +17,77 @@
     </div>
     
     <div class="Emptybusket">
-        <img src="{% static 'img/Emptybusket.svg' %}" alt="Emptybusket">
+        <button class="busket-add"><img src="{% static 'img/Emptybusket.svg' %}" alt="Emptybusket"></button>
     </div>
 
 </div>
+
+
+<div class="popup">
+
+    <div class="popup_top">
+        <ul class="popup_ul">
+            <li class="popup_li">BUSKET 추가하기</li>
+            <li class="popup_li close-popup">X</li>
+        </ul>
+    </div>
+
+    <div class="popup_bottom">
+        <div class="Emptybusket2">
+            <img src="{% static 'img/Emptybusket.svg' %}" alt="Emptybusket">
+        </div>
+
+        <ul class="popup_detail">
+
+            <div class="detail1">
+                <li class="p_ques">이 BUSKET의 이름은 뭐야?</li>
+                <div>
+                    <input  class="p_yellowbox" type="text">
+                </div>
+            </div>
+
+            <div class="detail2">
+                <li class="p_ques">BUSKET은 얼마야?</li>
+                <div>
+                    <input class="p_yellowbox" type="text">
+                </div>
+            </div>
+
+            <div class="detail3">
+                <li class="p_ques">BUSKET은 어디서 살 수 있어?</li>
+                <div>
+                    <input class="p_yellowbox" type="text" placeholder="구매처 별명">
+                </div>
+                <div>
+                    <input class="p_yellowbox" type="text" placeholder="링크 복사 & 붙여넣기">
+                </div>
+            </div>
+
+
+            <div class="detail4">
+                <li class="p_ques que1">마지막으로 카테고리를 설정해보자!</li>
+                <div class="select-container">
+                    <select class="p_yellowbox ">
+                        <option class="p_option" value="기타">기타</option>
+                        <option class="p_option" value="의류">의류</option>
+                        <option class="p_option" value="인테리어">인테리어</option>
+                        <option class="p_option" value="굿즈">굿즈</option>
+                        <option class="p_option" value="음식">음식</option>
+                        <option class="p_option" value="취미">취미</option>
+                    </select>
+                </div>
+            </div>
+
+        </ul>
+
+        <div class="Addbutton">
+            <img src="{% static 'img/Addbutton.svg' %}" alt="Addbutton">
+        </div>
+    </div>
+    
+</div>
+
+
 
 <div class="Busket_ing">
     <p>나의 비스켓 현황</p>
@@ -66,6 +133,37 @@
             <img src="{% static 'img/비스켓 11.svg' %}" alt="busket11">
         </div>
 
+    </div>
+
+</div>
+
+<div class="pinkbox">
+
+    <ul class="ul_top">
+        <li class="li_top">의류</li>
+        <li class="li_top">인테리어</li>
+        <li class="li_top">굿즈</li>
+        <li class="li_top">음식</li>
+        <li class="li_top">취미</li>
+        <li class="li_top">기타</li>
+    </ul>
+
+    <div class="pinkbox_top"></div>
+
+    <div class="pinkbox_bottom">
+        <div class="busket8_2">
+            <img src="{% static 'img/비스켓 8.svg' %}" alt="busket8">
+        </div>
+
+        <ul class="ul_bottom">
+            <li class="li_bottom">여름 셔링 블라우스</li>
+            <li class="li_bottom">가격 : 39,000원</li>
+            <li class="li_bottom">구매처 : 오늘의 집</li>
+        </ul>
+
+        <div class="detail_bt">
+            <img src="{% static 'img/자세히 보기.svg' %}" alt="자세히 보기">
+        </div>
     </div>
 
 </div>
