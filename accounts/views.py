@@ -14,8 +14,8 @@ def signup(request):
             )
             auth.login(request, user)
             return redirect('home')
-        return render(request, 'signup.html')
-    return render(request, 'signup.html')
+        return render(request, 'signup_test.html')
+    return render(request, 'signup_test.html')
 
 
 def login(request):
@@ -27,9 +27,9 @@ def login(request):
             auth.login(request, user)
             return redirect('home')
         else:
-            return render(request, 'login.html')
+            return render(request, 'login_test.html')
     else:
-        return render(request, 'login.html')
+        return render(request, 'login_test.html')
 
 def my(request):
     return render(request, 'my.html')

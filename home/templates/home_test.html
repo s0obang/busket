@@ -1,0 +1,14 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+<p>홈</p>
+<a href="{% url 'accounts:login' %}"><button>로그인</button></a>
+<a href="{% url 'accounts:signup' %}"><button>회원가입</button></a>
+<a href="{% url 'accounts:logout' %}"><button>로그아웃</button></a>
+
+
+{% endblock %}
