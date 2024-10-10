@@ -5,6 +5,7 @@
 
 .user_form h3{
     text-align: left;
+    margin-left: 35px;
 }
 
 .user_form h1{
@@ -16,57 +17,41 @@
     border-radius: 15px;
     padding-left: 10px;
 
-    width: 95%;
+    width: 80%;
     height: 40px;
 }
 
+/*프로필 사진 업로드*/
 .profile{
     width: 400px;
-    padding: 130px 0;
     font-size: 0;
 }
 
-.profile_img_button{
-    border: 10px solid #FFD950;
-    border-radius: 100%;
-
-    padding: 120px;
-    margin: 0 auto;
+#preview {
+    width: 300px;
+    height: 300px;
     cursor: pointer;
 
-    font-weight: bolder;
-    font-size: 30px;
+    border: 10px solid #FFD950;
+    border-radius: 50%;
+    margin: 5px;
 }
 
-.preview{
-}
-
-
-
-/*
-#profile_img::file-selector-button{
-    display: none;
-}
-*/
-
+/*제출 버튼*/
 .user_form input[type="submit"]{
     background-color: #1883E5;
+    font-size: large;
     color: white;
 
     border: none;
     padding: none;
     cursor: pointer;
 
-    width: 100px;
-    margin-top: 50px;
+    width: 120px;
+    margin: 30px 0;
+    box-shadow: 0 2px 3px 0 rgba(47, 51, 55, 0.2);
 }
 
 .user_form input[type="submit"]:hover{
     background-color: #81c2ff;
-}
-
-img{
-    width: 50px;
-    height: 50px;
-    margin: 5px;
 }
