@@ -1,6 +1,7 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
 * {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
 body {
@@ -17,7 +18,8 @@ body {
     display: flex;
     flex-direction: column;
 }
-.wrap main{
+
+.wrap main {
     flex: 1;
 }
 
@@ -51,6 +53,7 @@ body {
     display: flex;
     list-style: none;
     gap: 5px;
+    color: #333;
 }
 
 .wrap header ul li {
@@ -63,18 +66,23 @@ body {
 
 }
 
+.wrap header ul li a {
+    color: black;
+}
+
 .wrap header ul li:hover {
     background-color: #FFD950;
     cursor: pointer;
 }
 
-.wrap .main-footer {
+ .main-footer {
     width: 90%;
     margin: 10px auto;
-    background-color: #d9d9d970;
+    background-color: #d9d9d941;
     padding: 20px 40px;
     border-radius: 30px;
     color: #333;
     font-size: 20px;
     font-weight: normal;
+    margin-top: 100px;
 }

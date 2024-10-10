@@ -1,0 +1,73 @@
+* {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+}
+
+.wrap {position: relative;}
+
+.Add {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    font-size: 40px;
+}
+
+.Spark_61 {
+    position: absolute;
+    margin: 30px 0 0 1150px;
+}
+
+.Emptybusket {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+p { margin: 0; }
+
+.Busket_ing {
+    margin: 100px 0 0 200px ;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 180px;
+}
+
+.wrap2 { position: relative; }
+
+.Brutalist_99, .Rectangle_15 {
+    display: flex;
+    justify-content: center;
+}
+
+.Rectangle_15 {
+    position: relative;
+    z-index: 1;
+}
+
+.wrap3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin: -580px 0 0 0;
+    z-index: 2;
+
+}
+
+.buskets, .buskets2 {
+    width: 1216px;
+    display: flex;
+    flex-direction: row;
+}
+
+.buskets { 
+    justify-content: space-evenly;
+    margin-bottom: 100px; }
+
+.buskets2 {
+    padding-bottom: 150px;
+    /* margin-bottom: 100px;     */
+}
+
+.busket10, .busket11 { margin-left: 83.21px;}
+
