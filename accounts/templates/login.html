@@ -1,11 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>로그인</h1>
-</body>
+{% extends "my.html" %}
+{% load static %}
+{% block content %}
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/modal.css' %}">
+        <link rel="stylesheet" href="{% static 'css/login.css' %}">
+        <title>로그인</title>
+    </head>
+
+    <body>
+        <div class="modal"> <!--로그인 모달창-->
+            <div class="modal_body"> <!--로그인 모달창 내용-->
+                <div class="container">
+                    <form class="user_form">
+                        <h3> 이메일 </h3>
+                        <input type="text" placeholder="emial">
+                        <h3> 비밀번호 </h3>
+                        <input type="password" placeholder="password">
+                        <input type="submit" value="로그인">
+                    </form>
+                </div>
+            </div>
+        </div> 
+    </body>
 </html>
+{% endblock %}
