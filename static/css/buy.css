@@ -1,6 +1,14 @@
 .buy_wrap{
     width: 90%;
-    margin: 0 auto;
+    margin: 50px auto;
+}
+.main-header .buy{
+    background-color: #FFD950;
+}
+.buy_wrap .bcg-img{
+    position: absolute;
+    top: 150px;
+    right: 50px;
 }
 .buy_wrap .top{
     padding-top: 50px;
