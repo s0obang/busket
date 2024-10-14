@@ -1,0 +1,5 @@
+{% if widget.is_initial %}
+    프로필 : <img src="{{ widget.value.url }}" alt="Profile Image" style="max-width: 200px; max-height: 200px;"><br>
+    기본 프로필 : <input type="checkbox" name="{{ widget.checkbox_name }}" id="{{ widget.checkbox_id }}">
+{% endif %}
+&nbsp&nbsp&nbsp&nbsp새 프로필 : <input type="file" name="{{ widget.name }}" id="{{ widget.attrs.id }}">

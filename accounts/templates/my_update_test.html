@@ -1,0 +1,7 @@
+<form action="{% url 'accounts:my_update' user.id %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{profile_update_form.userImage}}<br><br>
+    닉네임 : {{ profile_update_form.nickname }}<br><br>
+    
+    <button type="submit">저장</button>
+</form>
