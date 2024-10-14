@@ -1,6 +1,8 @@
 <form action="{% url 'accounts:my_update' user.id %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
+    {% comment %} 기존 프로필 이미지 가져옴+프로필 이미지 수정 폼 가져옴 {% endcomment %}
     {{profile_update_form.userImage}}<br><br>
+    {% comment %} 닉네임 수정칸 가져옴 {% endcomment %}
     닉네임 : {{ profile_update_form.nickname }}<br><br>
     
     <button type="submit">저장</button>

@@ -43,6 +43,8 @@ def my(request, user_id):
     profile=get_object_or_404(Profile, user=user)
     return render(request, 'my_test.html', {'profile':profile})
 
+#my_update : 프로필 수정 함수
+#profile_update_form : 프로필 수정 폼
 def my_update(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     profile=get_object_or_404(Profile, user=user)
@@ -51,6 +53,7 @@ def my_update(request, user_id):
     else:
         profile_update_form=ProfileForm(request.POST,request.FILES, instance=profile)
         if profile_update_form.is_valid():
+            #기본프로필로 체크박스 클릭 시 default.jpeg로 프로필 바뀜
             if 'userImage-clear' in request.POST: 
                 profile.userImage = 'default.jpeg'
             profile_update_form.save()
