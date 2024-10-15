@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <title>BUSKET</title>
+</head>
+
+<body style="background-image:url({% static 'img/background.svg' %})">
+    <div class="wrap">
+        <header class="main-header">
+            <div class="logo">
+                <a href="/">
+                <img src="{% static 'img/logo.svg' %}" alt="logo"/>
+            </a>
+            </div>
+            <ul class="category">
+                <li class="buy">BUY</li>
+                <li class="bucket">BUCKET</li>
+                <li class="share">SHARE</li>
+                {% comment %} 로그인 되어있을 때와 로그아웃 되어있을 때 MY 버튼 다르게 설정(보이는 건 같음) {% endcomment %}
+                {% if user.is_authenticated %}
+                <li class="my"><a href="{% url 'accounts:my' user.id %}">MY</a></li>
+                {%else%}
+                <li class="my">MY</li>
+                {%endif%}
+            </ul>
+        </header>
+        <main>
+            {% block content %}
+
+            {% endblock %}
+        </main>
+
+        <footer class="main-footer">
+            <div class="inner">
+                <p>ⓒ SSWU_WAGI 2기 Team.WEB</p>
+                <p class="member">BACKEND 조수빈 손정민 <br /> FRONTEND 최수진 백수진 김가윤</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
