@@ -4,12 +4,7 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f7f7f7;
-}
-
-.container {
+.container_wrap {
     width: 1109px;
     height: 731px;
     margin: 20px auto;
@@ -39,6 +34,8 @@ body {
     font-weight: bold;
     cursor: pointer;
     margin-right: 30px;
+    background: none;
+    border: none;
 }
 
 .content {
@@ -46,7 +43,7 @@ body {
     padding: 20px;
 }
 
-.character {
+.busketimg {
     margin-top: 30px;
     width: 297px;
     height: 298px;
