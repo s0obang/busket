@@ -1,10 +1,32 @@
+.whole{
+    margin: 0 auto;
+}
+
+
 /*bgc 컬러 노란색 고정*/
 .my{ 
     background-color: #FFD950;
 }
 
 .cumulation, .report{
-    margin: 2.5% 10%;
+    margin: 5% 0%;
+}
+
+/*배경 장식*/
+#spark {
+    width: 150px;
+    position: absolute;
+    top: 150px;
+    left: 10%;
+    z-index: -100;
+}
+
+#rectangle {
+    width: 150px;
+    position: absolute;
+    top: 300px;
+    right: 5%;
+    z-index: -100;
 }
 
 /*흰색 박스 + 내부 사진 및 글씨 설정*/
@@ -30,41 +52,51 @@
 }
 
 .name{
-    width: 250px;
-    padding: 5px;
+    width: 230px;
+    padding: 10px;
     margin: 0 auto; /*가운데 정렬*/
 
     border-radius: 50px;
     background-color: rgba(255, 255, 255, 0.7);
 }
 
-.profile a{
-    color: black;
-    margin: 10px;
+.login_logout_btn, .profile_btn, .signin_btn{
+    border: 0;
+    margin: 8px;
+    background-color: transparent;
+    cursor: pointer;
+
+    font-size: large;
+    text-decoration-line: underline;
 }
 
 /*BUSKET 목록*/
 .box{
+    width: 1000px;
     border-radius: 30px;
     background-color: rgba(255, 255, 255, 0.5);
 
     display: flex;
-    padding: 30px;   
-}
-
-.report .box{
+    padding: 40px 60px;
     flex-direction: column;
 }
 
-.biscuit{
-    text-align: center;
-    margin: 20px;
+.list{
+    padding: 20px;
+    font-size: x-large;
 }
 
 .explanation{
-    width: 60%;
-    padding: 10% 3%;
+    margin: 50px 0;
     text-align: center;
+}
+
+.biscuit{
+    margin: 0 40px;
+}
+
+.cumulation .explanation{
+    width: 600px;
 }
 
 .left{
@@ -73,4 +105,31 @@
 
 .right{
     float: right;
+}
+
+/*BUSKET REPORT 비스켓과 설명글 위치*/
+.report .left{
+    margin-left: 200px;
+    margin-right: 100px;
+}
+
+.report .right{
+    margin-right: 250px;
+}
+
+/*글자 색깔*/
+.red{
+    color:#DF3354;
+}
+
+.yellow{
+    color:#FFD950;
+}
+
+.green{
+    color:#35C386;
+}
+
+.blue{
+    color:#1883E5;
 }
