@@ -16,8 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 모달 열기 함수
     function openModal(modal) {
-        // 모든 모달을 닫고 시작 (다른 모달과 겹치는 문제 방지)
-        document.querySelectorAll('.modal_box').forEach(m => m.classList.remove('active'));
         modal.classList.add('active');
     }
 
@@ -43,9 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 프로필 수정 모달 열기
     profileBtn.addEventListener('click', () => openModal(profileModal));
-
-    // 로그아웃 버튼 클릭 시: 로그인/로그아웃 모달 닫기
-    logoutBtn.addEventListener('click', () => closeModal(loginLogoutModal));
 
     // 모든 닫기 버튼에 이벤트 추가: 모달 닫기
     closeButtons.forEach((btn) =>
