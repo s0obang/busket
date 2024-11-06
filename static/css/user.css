@@ -22,6 +22,10 @@
     height: 40px;
 }
 
+.user_form input:focus{
+    outline-style: none;
+}
+
 /*프로필 사진 업로드*/
 #preview {
     width: 200px;
