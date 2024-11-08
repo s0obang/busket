@@ -3,29 +3,29 @@
 {% block content %}
 
 <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+<script src="{% static 'js/landing.js' %}"></script>
 
-<div class="container_wrap">
+<div class="popup">
 
-    <div class="header">
+    <div class="landing-header">
         <p>BUSKET을 소개합니다.</p>
-        <button class="closebtn">X</button>
+        <button id="closebtn" class="closebtn">X</button>
     </div>
 
     <div class="content">
         <img src="{% static 'img/landing/landingbusket.png' %}" alt="BUSKETIMG" class="busketimg">
         <h1>BUY - BISKET - BUKET</h1>
-        <img src="{% static 'img/landing/buskettext.svg' %}" alt="BUSKETTEXT" class="buskettext">
+        <img src="{% static 'img/landing/buskettext.png' %}" alt="BUSKETTEXT"  width="280px" class="buskettext">
         <p class="text">
             BUSKET은 구매하고자 하는 상품을 효율적으로 고를 수 있게 해주는 서비스입니다.<br>
-            상품을 비스켓으로 등록하고 바구니에 쏙 담아보세요!<br> </p>
-            @SSWU_WAGI
-        </p>
-
+            상품을 비스켓으로 등록하고 바구니에 쏙 담아보세요!<br> @SSWU_WAGI</p>
+            
         <div class="footer">
-            <label for="box">다시 보지 않기</label>
-            <input type="checkbox" id="checkbox">
+            <label for="confirmcheckbox">다시 보지 않기</label>
+            <input class="checkbox" type="checkbox" id="confirmcheckbox">
         </div>
     </div>
+    
 </div>
 
 
