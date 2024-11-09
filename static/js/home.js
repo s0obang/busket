@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
     const cartIcon = document.querySelector(".home4");
 
