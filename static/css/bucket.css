@@ -45,7 +45,7 @@ p { margin: 0; }
     margin: 180px 0 20px 0;
 }
 
-.wrap2 { position: relative;}
+.wrap2 { position: relative; }
 
 .Brutalist_99, .Rectangle_15 {
     display: flex;
@@ -79,6 +79,7 @@ p { margin: 0; }
 
 .buskets2 {
     padding-bottom: 150px;
+    /* margin-bottom: 100px;     */
 }
 
 .busket10, .busket11 { margin-left: 83.21px;}
@@ -286,4 +287,3 @@ input.p_yellowbox::placeholder { text-align: right; }
 }
 
 .detail1, .detail2, .detail3, .detail4 { margin-bottom: 70px;}
-
