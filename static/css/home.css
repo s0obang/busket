@@ -31,7 +31,7 @@
 .home_container {
     margin: 0 auto;
     display: flex;
-    flex-direction: column;         
+    flex-direction: column;
 }
 
 .box1 {
@@ -61,7 +61,7 @@
     gap: 170px;
 }
 
-.text1 { 
+.text1 {
     margin: auto 0;
 }
 
@@ -69,12 +69,12 @@
     margin: auto 0;
 }
 
-.text3{
+.text3 {
     margin-top: 30px;
     margin-left: -40px;
 }
 
-.share-icon{
+.share-icon {
     margin-left: 40px;
 }
 
@@ -88,19 +88,19 @@
 
 .promotion {
     padding: 20px;
-    margin-top: 280px;
+    margin-top: 380px;
     text-align: center;
 }
 
-.promotion p{
+.promotion p {
     font-size: 30px;
     font-weight: bold;
 }
 
-.home4{
+.home4 {
     position: absolute;
     top: 448px;
-    left: 143px;  
+    left: 143px;
 }
 
 .scrollpromo {
@@ -110,8 +110,8 @@
     width: 1281px;
     height: 800px;
     overflow-x: hidden;
-  }
-  
+}
+
 .promo {
     min-width: 1281px;
     height: 700px;
@@ -120,18 +120,37 @@
     align-items: center;
     justify-content: center;
     font-size: 2em;
-  }
+}
 
-.home5_container{
-  position: absolute;
-  top: 970px;
-  left: 420px;
+.home4_container {
+    position: absolute;
+    top: 448px;
+    left: 143px;
+}
+
+.home4 {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 1.8s ease, transform 1.8s ease;
+    transition-delay: 0.8s;
+}
+
+.home4.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.home5_container {
+    position: absolute;
+    top: 970px;
+    left: 420px;
 }
 
 .home5 {
     opacity: 0;
     transform: translateX(-50px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition: opacity 1.8s ease, transform 1.8s ease;
+    transition-delay: 1.0s;
 }
 
 .home5.visible {
@@ -139,6 +158,38 @@
     transform: translateX(0);
 }
 
+.icon {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 1.8s ease, transform 1.8s ease;
+}
 
+.icon.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
 
+.vs-icon {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 1.8s ease, transform 1.8s ease;
+}
+
+.vs-icon.visible {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.3s;
+}
+
+.share-icon {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 1.8s ease, transform 1.8s ease;
+    transition-delay: 0.6s;
+}
+
+.share-icon.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
 

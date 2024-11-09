@@ -5,14 +5,78 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 cartIcon.classList.add("visible");
-             } else {
-                    cartIcon.classList.remove("visible");
-                }
-            });
+            } else {
+                cartIcon.classList.remove("visible");
+            }
         });
-    
-        observer.observe(cartIcon);
     });
+
+    observer.observe(cartIcon);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const cartIcon = document.querySelector(".home4");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                cartIcon.classList.add("visible");
+            } else {
+                cartIcon.classList.remove("visible");
+            }
+        });
+    });
+
+    observer.observe(cartIcon);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const cartIcon = document.querySelector(".icon");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                cartIcon.classList.add("visible");
+            } else {
+                cartIcon.classList.remove("visible");
+            }
+        });
+    });
+
+    observer.observe(cartIcon);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const cartIcon = document.querySelector(".vs-icon");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                cartIcon.classList.add("visible");
+            } else {
+                cartIcon.classList.remove("visible");
+            }
+        });
+    });
+
+    observer.observe(cartIcon);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const cartIcon = document.querySelector(".share-icon");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                cartIcon.classList.add("visible");
+            } else {
+                cartIcon.classList.remove("visible");
+            }
+        });
+    });
+
+    observer.observe(cartIcon);
+});
 
 
 
@@ -32,6 +96,6 @@ document.addEventListener("DOMContentLoaded", function () {
             behavior: "smooth"
         });
     }
-    
+
     setInterval(scrollToNextPage, intervalTime);
 });
