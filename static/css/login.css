@@ -1,63 +1,14 @@
-.user_form{
-    width: 100%;
-    text-align: center;
-}
+.login_btn, .logout_btn{
+    display: block;
+    width: 300px;
+    padding: 25px;
+    margin: 10px 100px;
 
-.user_form h3{
-    text-align: left;
-}
+    border: 0;
+    border-radius: 10px;
+    background-color: #35C386;
 
-.user_form h1{
-    align-items: center;
-}
-
-.user_form input{
-    border: 3px solid #FFD950;
-    border-radius: 15px;
-    padding-left: 10px;
-
-    width: 95%;
-    height: 40px;
-}
-
-.profile{
-    width: 400px;
-    padding: 130px 0;
-    font-size: 0;
-}
-
-.profile_img_button{
-    border: 10px solid #FFD950;
-    border-radius: 100%;
-
-    padding: 120px;
-    margin: 0 auto;
+    font-size: large;
+    font-weight: bold;
     cursor: pointer;
-
-    font-weight: bolder;
-    font-size: 30px;
-}
-
-
-
-.user_form input[type="submit"]{
-    background-color: #1883E5;
-    color: white;
-
-    border: none;
-    padding: none;
-    cursor: pointer;
-
-    width: 100px;
-    margin-top: 50px;
-}
-
-.user_form input[type="submit"]:hover{
-    background-color: #81c2ff;
-}
-
-img{
-    width: 50px;
-    height: 50px;
-    margin: 5px;
 }
