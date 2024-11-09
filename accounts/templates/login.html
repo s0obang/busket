@@ -11,24 +11,19 @@
     </head>
 
     <body>
-        <div class="modal_box">
-            <div class="modal_content">
-                <span class="close">&times;</span> <!-- 닫기 버튼 -->
+        <div class="modal"> <!--로그인 모달창-->
+            <div class="modal_body"> <!--로그인 모달창 내용-->
+                <div class="container">
                     <form class="user_form">
-                        <h2>프로필 수정</h2>
-                        <h3>닉네임</h3>
+                        <h3> 닉네임 </h3>
                         <input type="text" placeholder="name">
-                        <h3>프로필 사진</h3>
-                        <div class="profile">
-                            <label class="profile_img_button" for="profile_img"> 
-                                <img src="{% static 'img/accounts/프로필사진.svg' %}" id="preview">
-                            </label>
-                            <input id="profile_img" type="file" accept="image/*" style="display: none;">
-                        </div>
-                        <input type="submit" value="저장">
+                        <h3> 비밀번호 </h3>
+                        <input type="password" placeholder="password">
+                        <input type="submit" value="로그인">
                     </form>
+                </div>
             </div>
-        </div>
+        </div> 
     </body>
 </html>
 {% endblock %}

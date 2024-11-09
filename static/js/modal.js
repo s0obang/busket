@@ -1,25 +1,53 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const buttons = document.querySelectorAll('.modal_btn');
-    const modals = document.querySelectorAll('.modal_box');
+document.addEventListener('DOMContentLoaded', () => {
+    // 모달 관련 요소 선택
+    const loginLogoutModal = document.querySelector('.login_logout_modal');
+    const loginModal = document.querySelector('.login_modal');
+    const signinModal = document.querySelector('.signin_modal');
+    const profileModal = document.querySelector('.profile_modal');
+
+    // 버튼 요소 선택
+    const loginLogoutBtn = document.querySelector('.login_logout_btn');
+    const loginBtn = document.querySelector('.login_btn');
+    const signinBtn = document.querySelector('.signin_btn');
+    const profileBtn = document.querySelector('.profile_btn');
+    const logoutBtn = document.querySelector('.logout_btn');
+
     const closeButtons = document.querySelectorAll('.close');
-  
-    buttons.forEach(button => {
-        button.addEventListener('click', function () {
-            const classList = this.classList;
-            modals.forEach(modal => {
-                classList.forEach(className => {
-                    if (modal.classList.contains(className.replace('_btn', '_modal'))) {
-                        modal.classList.add('active');
-                    }
-                });
-            });
-        });
+
+    // 모달 열기 함수
+    function openModal(modal) {
+        modal.classList.add('active');
+    }
+
+    // 모달 닫기 함수
+    function closeModal(modal) {
+        modal.classList.remove('active');
+    }
+
+    // 로그인/로그아웃 모달 열기
+    loginLogoutBtn.addEventListener('click', () => openModal(loginLogoutModal));
+
+    // 로그인 버튼 클릭 시: 로그인/로그아웃 모달 닫고 로그인 모달 열기
+    loginBtn.addEventListener('click', () => {
+        closeModal(loginLogoutModal);
+        openModal(loginModal);
     });
-  
-    closeButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            const modal = this.closest('.modal_box'); // 가장 가까이 있는 모달박스 선택
-            modal.classList.remove('active'); //active 제거
-        });
+
+    // 회원가입 버튼 클릭 시: 로그인/로그아웃 모달 닫고 회원가입 모달 열기
+    signinBtn.addEventListener('click', () => {
+        closeModal(loginLogoutModal);
+        openModal(signinModal);
     });
-  });
+
+    // 프로필 수정 모달 열기
+    profileBtn.addEventListener('click', () => openModal(profileModal));
+
+    // 모든 닫기 버튼에 이벤트 추가: 모달 닫기
+    closeButtons.forEach((btn) =>
+        btn.addEventListener('click', () => {
+            const modal = btn.closest('.modal_box');
+            closeModal(modal);
+        })
+    );
+
+});
