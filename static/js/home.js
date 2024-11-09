@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const cartIcon = document.querySelector(".home5");
+    const cartIcon = document.querySelector(".home4");
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    const cartIcon = document.querySelector(".home4");
+    const cartIcon = document.querySelector(".home5");
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
