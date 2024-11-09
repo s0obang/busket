@@ -6,24 +6,29 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{% static 'css/modal.css' %}">
-        <link rel="stylesheet" href="{% static 'css/login.css' %}">
+        <link rel="stylesheet" href="{% static 'css/user.css' %}">
         <title>로그인</title>
     </head>
 
     <body>
-        <div class="modal"> <!--로그인 모달창-->
-            <div class="modal_body"> <!--로그인 모달창 내용-->
-                <div class="container">
+        <div class="modal_box">
+            <div class="modal_content">
+                <span class="close">&times;</span> <!-- 닫기 버튼 -->
                     <form class="user_form">
-                        <h3> 이메일 </h3>
-                        <input type="text" placeholder="emial">
-                        <h3> 비밀번호 </h3>
-                        <input type="password" placeholder="password">
-                        <input type="submit" value="로그인">
+                        <h2>프로필 수정</h2>
+                        <h3>닉네임</h3>
+                        <input type="text" placeholder="name">
+                        <h3>프로필 사진</h3>
+                        <div class="profile">
+                            <label class="profile_img_button" for="profile_img"> 
+                                <img src="{% static 'img/accounts/프로필사진.svg' %}" id="preview">
+                            </label>
+                            <input id="profile_img" type="file" accept="image/*" style="display: none;">
+                        </div>
+                        <input type="submit" value="저장">
                     </form>
-                </div>
             </div>
-        </div> 
+        </div>
     </body>
 </html>
 {% endblock %}
