@@ -1,0 +1,61 @@
+.user_form{
+    width: 100%;
+    text-align: center;
+}
+
+.user_form h2{
+    align-items: center;
+    padding-top: 30px;
+}
+
+.user_form h3{
+    text-align: left;
+    margin-left: 10%;
+}
+
+.user_form input{
+    border: 3px solid #FFD950;
+    border-radius: 15px;
+    padding-left: 10px;
+
+    width:80%;
+    height: 40px;
+}
+
+.user_form input:focus{
+    outline-style: none;
+}
+
+/*프로필 사진 업로드*/
+#preview {
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+
+    border: 10px solid #FFD950;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.profile{
+    text-align: center;
+}
+
+/*제출 버튼*/
+.user_form input[type="submit"]{
+    background-color: #1883E5;
+    font-size: large;
+    color: white;
+
+    border: none;
+    padding: none;
+    cursor: pointer;
+
+    margin: 30px;
+    width: 120px;
+    box-shadow: 0 2px 3px 0 rgba(47, 51, 55, 0.2);
+}
+
+.user_form input[type="submit"]:hover{
+    background-color: #81c2ff;
+}
