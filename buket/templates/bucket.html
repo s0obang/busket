@@ -25,69 +25,73 @@
     </div>
     
     
-    <div class="popup">
+    <form action="{% url 'buket:buket' %}" method="POST">
+        {% csrf_token %}
+        <div class="popup">
     
-        <div class="popup_top">
-            <ul class="popup_ul">
-                <li class="popup_li">BUSKET 추가하기</li>
-                <li class="popup_li close-popup">X</li>
-            </ul>
-        </div>
-    
-        <div class="popup_bottom">
-            <div class="Emptybusket2">
-                <img src="{% static 'img/Emptybusket.svg' %}" alt="Emptybusket">
+            <div class="popup_top">
+                <ul class="popup_ul">
+                    <li class="popup_li">BUSKET 추가하기</li>
+                    <li class="popup_li close-popup">X</li>
+                </ul>
             </div>
-    
-            <ul class="popup_detail">
-    
-                <div class="detail1">
-                    <li class="p_ques">이 BUSKET의 이름은 뭐야?</li>
-                    <div>
-                        <input  class="p_yellowbox" type="text">
-                    </div>
-                </div>
-    
-                <div class="detail2">
-                    <li class="p_ques">BUSKET은 얼마야?</li>
-                    <div>
-                        <input class="p_yellowbox" type="text">
-                    </div>
-                </div>
-    
-                <div class="detail3">
-                    <li class="p_ques">BUSKET은 어디서 살 수 있어?</li>
-                    <div>
-                        <input class="p_yellowbox" type="text" placeholder="구매처 별명">
-                    </div>
-                    <div>
-                        <input class="p_yellowbox" type="text" placeholder="링크 복사 & 붙여넣기">
-                    </div>
-                </div>
-    
-    
-                <div class="detail4">
-                    <li class="p_ques que1">마지막으로 카테고리를 설정해보자!</li>
-                    <div class="select-container">
-                        <select class="p_yellowbox ">
-                            <option class="p_option" value="기타">기타</option>
-                            <option class="p_option" value="의류">의류</option>
-                            <option class="p_option" value="인테리어">인테리어</option>
-                            <option class="p_option" value="굿즈">굿즈</option>
-                            <option class="p_option" value="음식">음식</option>
-                            <option class="p_option" value="취미">취미</option>
-                        </select>
-                    </div>
-                </div>
-    
-            </ul>
-    
-            <div class="Addbutton" onclick="addClose()">
-                <img src="{% static 'img/Addbutton.svg' %}" alt="Addbutton">
-            </div>
-        </div>
         
-    </div>
+            <div class="popup_bottom">
+                <div class="Emptybusket2">
+                    <img src="{% static 'img/Emptybusket.svg' %}" alt="Emptybusket">
+                </div>
+        
+                <ul class="popup_detail">
+        
+                    <div class="detail1">
+                        <li class="p_ques">이 BUSKET의 이름은 뭐야?</li>
+                        <div>
+                            <input class="p_yellowbox" type="text" name="busketName">
+                        </div>
+                    </div>
+        
+                    <div class="detail2">
+                        <li class="p_ques">BUSKET은 얼마야?</li>
+                        <div>
+                            <input class="p_yellowbox" type="text" name="busketPrice">
+                        </div>
+                    </div>
+        
+                    <div class="detail3">
+                        <li class="p_ques">BUSKET은 어디서 살 수 있어?</li>
+                        <div>
+                            <input class="p_yellowbox" type="text" placeholder="구매처 별명" name="busketShop">
+                        </div>
+                        <div>
+                            <input class="p_yellowbox" type="text" placeholder="링크 복사 & 붙여넣기" name="busketShopUrl">
+                        </div>
+                    </div>
+        
+        
+                    <div class="detail4">
+                        <li class="p_ques que1">마지막으로 카테고리를 설정해보자!</li>
+                        <div class="select-container">
+                            <select class="p_yellowbox " name="busketCategory">
+                                <option class="p_option" value="기타">기타</option>
+                                <option class="p_option" value="의류">의류</option>
+                                <option class="p_option" value="인테리어">인테리어</option>
+                                <option class="p_option" value="굿즈">굿즈</option>
+                                <option class="p_option" value="음식">음식</option>
+                                <option class="p_option" value="취미">취미</option>
+                            </select>
+                        </div>
+                    </div>
+        
+                </ul>
+        
+                <button type="submit" class="Addbutton" onclick="addClose()">
+                    <img src="{% static 'img/Addbutton.svg' %}" alt="Addbutton">
+                </button>
+            </div>
+            
+        </div>
+    </form>
+
     
     
 
