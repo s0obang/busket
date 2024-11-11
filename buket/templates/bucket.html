@@ -13,48 +13,74 @@
         <div class="Add">
             <p>새 BUSKET 추가하기</p>
         </div>
-        
+
         <div class="Spark_61" onclick="">
             <img src="{% static 'img/Spark 61.svg' %}" alt="Spark_61">
         </div>
-        
+
         <div class="Emptybusket addPopup">
-            <button class="busket-add" onclick="addBusket(event)"><img id="bu-add" src="{% static 'img/Emptybusket.svg' %}" alt="Emptybusket"></button>
+            <button class="busket-add" onclick="addBusket(event)"><img id="bu-add"
+                    src="{% static 'img/Emptybusket.svg' %}" alt="Emptybusket"></button>
         </div>
-    
+
     </div>
-    
-    
+
+
     <div class="popup">
-    
+
         <div class="popup_top">
             <ul class="popup_ul">
                 <li class="popup_li">BUSKET 추가하기</li>
                 <li class="popup_li close-popup">X</li>
             </ul>
         </div>
-    
-        <div class="popup_bottom">
-            <div class="Emptybusket2">
-                <img src="{% static 'img/Emptybusket.svg' %}" alt="Emptybusket">
+        <form class="popup_bottom">
+            <div class="busket-options">
+                <label>
+                    <input type="radio" name="busket" value="2" >
+                    <div class="busket2">
+                        <img src="{% static 'img/비스켓 2.svg' %}" alt="busket2">
+                    </div>
+                </label>
+
+                <label>
+                    <input type="radio" name="busket" value="4" >
+                    <div class="busket4">
+                        <img src="{% static 'img/비스켓 4.svg' %}" alt="busket4">
+                    </div>
+                </label>
+
+                <label>
+                    <input type="radio" name="busket" value="8" >
+                    <div class="busket8">
+                        <img src="{% static 'img/비스켓 8.svg' %}" alt="busket8">
+                    </div>
+                </label>
+
+                <label>
+                    <input type="radio" name="busket" value="9" >
+                    <div class="busket9">
+                        <img src="{% static 'img/비스켓 9.svg' %}" alt="busket9">
+                    </div>
+                </label>
+
             </div>
-    
+
             <ul class="popup_detail">
-    
                 <div class="detail1">
                     <li class="p_ques">이 BUSKET의 이름은 뭐야?</li>
                     <div>
-                        <input  class="p_yellowbox" type="text">
+                        <input class="p_yellowbox" type="text">
                     </div>
                 </div>
-    
+
                 <div class="detail2">
                     <li class="p_ques">BUSKET은 얼마야?</li>
                     <div>
                         <input class="p_yellowbox" type="text">
                     </div>
                 </div>
-    
+
                 <div class="detail3">
                     <li class="p_ques">BUSKET은 어디서 살 수 있어?</li>
                     <div>
@@ -64,12 +90,11 @@
                         <input class="p_yellowbox" type="text" placeholder="링크 복사 & 붙여넣기">
                     </div>
                 </div>
-    
-    
+
                 <div class="detail4">
                     <li class="p_ques que1">마지막으로 카테고리를 설정해보자!</li>
                     <div class="select-container">
-                        <select class="p_yellowbox ">
+                        <select class="p_yellowbox">
                             <option class="p_option" value="기타">기타</option>
                             <option class="p_option" value="의류">의류</option>
                             <option class="p_option" value="인테리어">인테리어</option>
@@ -79,40 +104,41 @@
                         </select>
                     </div>
                 </div>
-    
             </ul>
-    
-            <div class="Addbutton" onclick="addClose()">
-                <img src="{% static 'img/Addbutton.svg' %}" alt="Addbutton">
-            </div>
-        </div>
-        
-    </div>
-    
-    
+            
 
-    
+            <button type="submit" class="Addbutton" onclick="addClose()">
+                <img src="{% static 'img/Addbutton.svg' %}" alt="Addbutton">
+            </button>
+        </form>
+
+
+    </div>
+
+
+
+
     <div class="wrap2">
 
-            
+
         <div class="Busket_ing">
             <p>나의 비스켓 현황</p>
         </div>
-    
+
         <div class="Brutalist_99">
             <img src="{% static 'img/Brutalist 99.svg' %}" alt="Brutalist_99">
         </div>
-    
+
         <div class="Rectangle_15">
             <img src="{% static 'img/Rectangle 15.svg' %}" alt="Rectangle_15">
-            
+
         </div>
     </div>
-    
+
     <div class="wrap3">
-    
+
         <div class="buskets">
-    
+
             <div class="busket2">
                 <img src="{% static 'img/비스켓 2.svg' %}" alt="busket2">
             </div>
@@ -125,24 +151,24 @@
             <div class="busket9">
                 <img src="{% static 'img/비스켓 9.svg' %}" alt="busket9">
             </div>
-    
+
         </div>
-        
+
         <div class="buskets2">
-    
+
             <div class="busket10">
                 <img src="{% static 'img/비스켓 10.svg' %}" alt="busket10">
             </div>
             <div class="busket11">
                 <img src="{% static 'img/비스켓 11.svg' %}" alt="busket11">
             </div>
-    
+
         </div>
-    
+
     </div>
-    
+
     <div class="pinkbox">
-    
+
         <!-- <ul class="ul_top">
 
             <li class="li_top">의류</li></button>
@@ -168,18 +194,18 @@
                 <div class="busket8_2">
                     <img src="{% static 'img/비스켓 8.svg' %}" alt="busket8">
                 </div>
-            
+
                 <ul class="ul_bottom">
                     <div class="li_bottom">여름 셔링 블라우스</div>
                     <div class="li_bottom">가격 : 39,000원</div>
                     <div class="li_bottom">구매처 : 오늘의 집</div>
                 </ul>
-            
+
                 <div class="detail_bt">
                     <a href="https://www.naver.com/"><img src="{% static 'img/자세히 보기.svg' %}" alt="자세히 보기"></a>
                 </div>
             </div>
-        
+
             <!-- 카테고리 별 divs, 클래스 추가 -->
             <div class="category-box interior-u"></div>
             <div class="category-box goods-u"></div>
@@ -188,9 +214,9 @@
             <div class="category-box etc-u"></div>
         </div>
 
-</div>
-
-    
+    </div>
 
 
-{% endblock %}
+
+
+    {% endblock %}
