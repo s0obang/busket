@@ -1,6 +1,10 @@
 * {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+.buket_wrap {
+    width: 90%;
+    margin: 0 auto;
 }
 
 .wrap {position: relative;}
@@ -10,11 +14,12 @@
     justify-content: center;
     margin-top: 50px;
     font-size: 40px;
+    font-weight: bold;
 }
 
 .Spark_61 {
     position: absolute;
-    margin: 30px 0 0 1150px;
+    top: 30px; right: 30px;
 }
 
 .Emptybusket {
@@ -23,13 +28,20 @@
     margin-top: 50px;
 }
 
+.busket-add {
+    border: none;
+    background: none;
+    cursor: pointer;
+
+}
+
 p { margin: 0; }
 
 .Busket_ing {
-    margin: 100px 0 0 200px ;
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 180px;
+    position: relative;
+    left: 100px;
+    font-size: 32px;
+    margin: 180px 0 20px 0;
 }
 
 .wrap2 { position: relative; }
@@ -71,3 +83,227 @@ p { margin: 0; }
 
 .busket10, .busket11 { margin-left: 83.21px;}
 
+.pinkbox {
+    width: 1200px;
+    height: 1400px;
+    background-color: rgba(255, 201, 211, 0.7);
+    display: flex;
+    margin: 350px auto;
+    border-radius: 30px;
+    flex-direction: column;
+    position: relative;
+
+}
+
+.pinkbox_top {
+    display: flex;
+    flex-direction: row;}
+
+.pinkbox_top2 {
+    width: 200px;
+    height: 114px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34px;
+    cursor: pointer;
+}
+
+#btn-cl { 
+    border-radius: 30px 0 0 0;
+}
+
+.selected {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.shadow {
+    box-shadow: 6px -2px 10px rgba(0, 0, 0, 0.25);
+}
+
+
+.pinkbox_top2:nth-child(6) {border-radius: 0 30px 0 0;}
+
+
+.li_top {
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+    cursor: pointer;
+}
+
+button li .li_top {
+    display: flex;
+    justify-content: center;
+}
+
+.bottpink_wrap { position: relative;}
+
+.selected2, .category-box, clothes-u, .interior-u, .goods-u, .food-u, .hobby-u {
+    width: 1200px;
+    height: 1286px;
+    background-color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    border-radius: 0 30px 30px 30px;
+}
+
+
+.etc-u {
+    width: 1200px;
+    height: 1286px;
+    background-color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    border-radius: 0 0 30px 30px;
+}
+
+.category-box {
+    display: none; /* 기본적으로 숨기기 */
+}
+
+.selected2 {
+    display: block; /* 기본적으로 'selected2'는 보이도록 설정 */
+}
+
+.busket8_2 {
+    position: absolute;
+    top: 7%;
+    left: 8%;
+}
+
+
+.ul_bottom {
+    list-style: none;
+    display: flex;
+    flex-direction: column; 
+    position: absolute;
+    top: 6.5%; left: 30%;
+    font-size: 36px;
+    line-height: 70px;
+    margin: 0; padding: 0;
+}
+
+.li_bottom { border-bottom: 1px solid;}
+
+.detail_bt {
+    position: absolute;
+    left: 70%; top: 9.5%;
+}
+
+
+.overlay {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* 흐릿한 배경 */
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+
+.popup {
+    display: none;
+    position:absolute;
+    top: 60px;
+    left: calc(50% - 350px);
+    /* margin-top: 30px; */
+    z-index: 66;
+}
+
+.popup_top {
+    width: 700px;
+    height: 50px;
+    background-color: #99E0C2;
+    margin: 0 auto;
+    border: 1px solid;
+}
+
+.popup_ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0; padding: 0 30px;
+    line-height: 50px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.popup_li:hover {
+    cursor: pointer;
+}
+
+.popup_bottom {
+    width: 700px;
+    height: 1000px;
+    background-color: white;
+    margin: 0 auto;
+    border: 1px solid;
+}
+
+.popup_detail {
+    list-style: none;
+    padding: 0;
+    margin: 70px 0 0 0;
+    font-size: 29px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+
+.Emptybusket2 { 
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 10px 0;
+}
+
+.Emptybusket2 img {
+    width: 150px; height: 150px;
+}
+
+.p_yellowbox {
+    width: 450px;
+    height: 52px;
+    border: 2px solid #FFD950;
+    border-radius: 30px;
+    margin: 10px 0 0 0;
+    line-height: 50px; 
+    font-size: 20px;
+    color: #4D4D4D;
+    padding: 0 30px;
+}
+
+.p_ques {font-size: 20px;}
+
+select.p_yellowbox {
+    width: 513px;
+    height: 56px;
+}
+
+.p_yellowbox:focus {outline: none;}
+
+
+input.p_yellowbox::placeholder { text-align: right; }
+
+.p_option {
+    text-align: left;
+    padding-left: 20px;
+    color: #4D4D4D;
+    padding: 0;
+}
+
+.Addbutton {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.Addbutton img {
+    width: 200px; height:140px;
+}
+
+.detail1, .detail2, .detail3, .detail4 {margin-bottom: 35px;}
