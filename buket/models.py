@@ -9,4 +9,4 @@ class Buket(models.Model):
     busketShop = models.CharField(max_length=20)
     busketShopUrl = models.CharField(max_length=20)
     busketCategory = models.CharField(max_length=20)
-    userImage=models.ImageField(blank=True, upload_to="buscketImage/", default='default.jpeg')
+    Image=models.ImageField(blank=True, upload_to="buscketImage/", default='default.jpeg')

@@ -143,31 +143,11 @@
     <div class="wrap3">
 
         <div class="buskets">
-
-            <div class="busket2">
-                <img src="{% static 'img/비스켓 2.svg' %}" alt="busket2">
-            </div>
-            <div class="busket4">
-                <img src="{% static 'img/비스켓 4.svg' %}" alt="busket4">
-            </div>
-            <div class="busket8">
-                <img src="{% static 'img/비스켓 8.svg' %}" alt="busket8">
-            </div>
-            <div class="busket9">
-                <img src="{% static 'img/비스켓 9.svg' %}" alt="busket9">
-            </div>
-
+        {% for buket in bukets %}
+        <div class="busket{{ forloop.counter }}">
+            <img src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}">
         </div>
-
-        <div class="buskets2">
-
-            <div class="busket10">
-                <img src="{% static 'img/비스켓 10.svg' %}" alt="busket10">
-            </div>
-            <div class="busket11">
-                <img src="{% static 'img/비스켓 11.svg' %}" alt="busket11">
-            </div>
-
+        {% endfor %}
         </div>
 
     </div>
