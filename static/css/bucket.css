@@ -44,7 +44,12 @@ p { margin: 0; }
     margin: 180px 0 20px 0;
 }
 
-.wrap2 { position: relative; }
+.wrap2 { 
+    position: relative;
+    margin-bottom: 470px;
+    z-index: 1;
+}
+
 
 .Brutalist_99, .Rectangle_15 {
     display: flex;
@@ -53,35 +58,51 @@ p { margin: 0; }
 
 .Rectangle_15 {
     position: relative;
-    z-index: 1;
+}
+
+.Rectangle_15 .rectangle {
+    padding: 40px;
+    width: 1200px;
+    min-height: 600px;
+    height: auto;
+    border-radius: 20px;
+    background-color: #FFF5CF;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* 세로 가운데 정렬 */
 }
 
 .wrap3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    margin: -580px 0 0 0;
-    z-index: 2;
-
+    display: grid;
+    gap: 20px; /* 그리드 아이템 간격 */
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px; /* 최대 너비 제한 */
+    margin: 0 auto; /* 중앙 정렬 */
 }
 
-.buskets, .buskets2 {
-    width: 1216px;
-    display: flex;
-    flex-direction: row;
+.buskets {
+    display: grid;
+    width: 100%;
+
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 20px; /* 그리드 간격 */
 }
 
-.buskets { 
-    justify-content: space-evenly;
-    margin-bottom: 100px; }
 
-.buskets2 {
-    padding-bottom: 150px;
-    /* margin-bottom: 100px;     */
+
+.buskets img {
+
+    height: auto;
+    border-radius: 10px;
 }
 
-.busket10, .busket11 { margin-left: 83.21px;}
+
+
+.buskets *{ 
+    display: flex;}
+
+
 
 .pinkbox {
     width: 1200px;
@@ -96,6 +117,7 @@ p { margin: 0; }
 }
 
 .pinkbox_top {
+
     display: flex;
     flex-direction: row;}
 
@@ -243,6 +265,9 @@ button li .li_top {
     background-color: white;
     margin: 0 auto;
     border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .popup_detail {
@@ -255,16 +280,29 @@ button li .li_top {
     align-items: center;
 } 
 
-.Emptybusket2 { 
+.popup_bottom .busket-options{
     display: flex;
+
+    white-space: nowrap;
+    overflow-y: hidden;
+    height: 100px;
+    padding-top: 100px;
     justify-content: center;
-    margin: 50px 0 10px 0;
+    align-items: center;
+    
 }
-
-.Emptybusket2 img {
-    width: 150px; height: 150px;
+.popup_bottom .busket-options label{
+    display: flex;
+    width: 150px;
+    height: 150px;
 }
-
+.popup_bottom .busket-options label img{
+    width: 100px;
+}
+.popup_bottom .busket-options label input{
+    width: 30px;
+    height: 30px;
+}
 .p_yellowbox {
     width: 450px;
     height: 52px;
@@ -300,6 +338,8 @@ input.p_yellowbox::placeholder { text-align: right; }
     display: flex;
     justify-content: center;
     cursor: pointer;
+    background: none;
+    border: none;
 }
 
 .Addbutton img {
