@@ -17,6 +17,16 @@ def buket(request):
         busketPrice = request.POST.get('busketPrice')
         busketShop = request.POST.get('busketShop')
         busketShopUrl = request.POST.get('busketShopUrl')
+        busket = request.POST.get('busket')
+        Image = '비스켓 2.svg'
+        if(busket=="2"):
+            Image='비스켓 2.svg'
+        elif(busket=="4"):
+            Image='비스켓 4.svg'
+        elif(busket=="8"):
+            Image='비스켓 8.svg'
+        elif(busket=="9"):
+            Image='비스켓 9.svg'  
         busketCategory = request.POST.get('busketCategory')
 
         buket = Buket(
@@ -25,7 +35,8 @@ def buket(request):
             busketPrice=busketPrice,
             busketShop=busketShop,
             busketShopUrl=busketShopUrl,
-            busketCategory=busketCategory
+            busketCategory=busketCategory,
+            Image=Image
         )
         buket.save()
          
