@@ -39,9 +39,20 @@ def buket(request):
             Image=Image
         )
         buket.save()
-         
-    bukets = Buket.objects.filter(user=request.user) 
-    return render(request, 'bucket.html', {'bukets': bukets})
+
+    bukets = Buket.objects.filter(user=request.user)   
+
+    #이 아래가 categorie별로 리턴하는거야
+    categories = {
+        "clothes": bukets.filter(busketCategory="의류"),
+        "interior": bukets.filter(busketCategory="인테리어"),
+        "goods": bukets.filter(busketCategory="굿즈"),
+        "food": bukets.filter(busketCategory="음식"),
+        "hobby": bukets.filter(busketCategory="취미"),
+        "etc": bukets.filter(busketCategory="기타"),
+    }
+    return render(request, 'bucket.html', {'bukets': bukets, 'categories': categories})
+
 
 
 

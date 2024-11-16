@@ -14,7 +14,7 @@
             <p>새 BUSKET 추가하기</p>
         </div>
 
-        <div class="Spark_61" onclick="">
+        <div class="Spark_61">
             <img src="{% static 'img/Spark 61.svg' %}" alt="Spark_61">
         </div>
 
@@ -25,7 +25,7 @@
 
     </div>
     
-        
+    
         <div class="popup">
     
             <div class="popup_top">
@@ -135,35 +135,79 @@
         </div>
 
         <div class="Rectangle_15">
-            <img src="{% static 'img/Rectangle 15.svg' %}" alt="Rectangle_15">
+           <div class="rectangle">
+            <div class="wrap3">
+
+                <div class="buskets">
+                    {% for buket in bukets %}
+                    <div class="busket{{ forloop.counter }}">
+                        <img  src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}" id="popupA" onclick="openPopup('{{ buket.busketName }}', '{{ buket.busketPrice }}','{{ buket.busketShop }}','{{ buket.busketShopUrl }}','{{ buket.busketCategory }}')">  
+                    </div>
+                    {% endfor %}
+                </div>
+
+        
+            </div>
+           </div>
 
         </div>
+
+        <div id="popupBuskets">
+    
+            <div class="popup_top">
+                <ul class="popup_ul">
+                    <li class="popup_li">Busket</li>
+                    <li class="popup_li" onclick="closePopup()">X</li>
+                </ul>
+            </div>
+        <!--이부분은 input태그일 필요가 없어요 입력을 받는게 아니고 값을 보여주는거니깐~~ form일 필요도 없음!!-->
+            <div class="popup_bottom">   
+                <ul class="popup_detail">
+        
+                    <div class="detail1">
+                        <li class="p_ques">BUSKET 이름</li>
+                        <div>
+                            <div class="p_yellowbox"><p  class="busketName"></p></div>
+                        </div>
+                    </div>
+        
+                    <div class="detail2">
+                        <li class="p_ques">BUSKET 가격</li>
+                        <div>
+                            <div class="p_yellowbox" id="busketPrice"><p  class="busketPrice"></p></div>
+                        </div>
+                    </div>
+        
+                    <div class="detail3">
+                        <li class="p_ques">BUSKET 구매처</li>
+                        <div>
+                            <div class="p_yellowbox" ><p  class="busketShop"></p></div>
+                        </div>
+                        <div>
+                            <div class="p_yellowbox" ><p  class="busketShopUrl"></p></div>
+                        </div>
+                    </div>
+        
+        
+                    <div class="detail4">
+                        <li class="p_ques que1">카테고리</li>
+                        <div>
+                            <div class="p_yellowbox" ><p class="busketCategory"></p></div>
+                        </div>
+                    </div>
+        
+                </ul>
+        
+            </div>
+            </div>
+            
+        </div>
+    
     </div>
 
-    <div class="wrap3">
-
-        <div class="buskets">
-        {% for buket in bukets %}
-        <div class="busket{{ forloop.counter }}">
-            <img src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}">
-        </div>
-        {% endfor %}
-        </div>
-
-    </div>
+    
 
     <div class="pinkbox">
-
-        <!-- <ul class="ul_top">
-
-            <li class="li_top">의류</li></button>
-            <li class="li_top">인테리어</li></button>
-            <li class="li_top">굿즈</li></button>
-            <li class="li_top">음식</li></button>
-            <li class="li_top">취미</li></button>
-            <li class="li_top">기타</li></button>
-
-        </ul> -->
 
         <div class="pinkbox_top">
             <div id="btn-cl" class="pinkbox_top2 selected shadow" onclick="cateSelect(this)">의류</div>
@@ -176,27 +220,99 @@
 
         <div class="bottpink_wrap">
             <div class="clothes-u selected2">
-                <div class="busket8_2">
-                    <img src="{% static 'img/비스켓 8.svg' %}" alt="busket8">
-                </div>
 
-                <ul class="ul_bottom">
-                    <div class="li_bottom">여름 셔링 블라우스</div>
-                    <div class="li_bottom">가격 : 39,000원</div>
-                    <div class="li_bottom">구매처 : 오늘의 집</div>
-                </ul>
+                    {% for buket in categories.clothes %}
+                    <div class="busket{{ forloop.counter }}">
+                        <img  src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}">
+                        <ul class="ul_bottom">
+                            <div class="li_bottom">{{ buket.busketName }}</div>
+                            <div class="li_bottom">가격 : {{ buket.busketPrice }}</div>
+                            <div class="li_bottom">구매처 : {{ buket.busketShop }}</div>
+                        </ul>
+                        <div class="detail_bt">
+                            <a href="{{ buket.busketShopUrl }}"><img src="{% static 'img/자세히 보기.svg' %}" alt="자세히 보기"></a>
+                        </div>
+                    </div>
+                    {% endfor %}
 
-                <div class="detail_bt">
-                    <a href="https://www.naver.com/"><img src="{% static 'img/자세히 보기.svg' %}" alt="자세히 보기"></a>
-                </div>
             </div>
 
             <!-- 카테고리 별 divs, 클래스 추가 -->
-            <div class="category-box interior-u"></div>
-            <div class="category-box goods-u"></div>
-            <div class="category-box food-u"></div>
-            <div class="category-box hobby-u"></div>
-            <div class="category-box etc-u"></div>
+            <div class="category-box interior-u">
+                    {% for buket in categories.interior %}
+                    <div class="busket{{ forloop.counter }}">
+                        <img  src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}">
+                        <ul class="ul_bottom">
+                            <div class="li_bottom">{{ buket.busketName }}</div>
+                            <div class="li_bottom">가격 : {{ buket.busketPrice }}</div>
+                            <div class="li_bottom">구매처 : {{ buket.busketShop }}</div>
+                        </ul>
+                        <div class="detail_bt">
+                            <a href="{{ buket.busketShopUrl }}"><img src="{% static 'img/자세히 보기.svg' %}" alt="자세히 보기"></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+            </div>
+            <div class="category-box goods-u">
+                {% for buket in categories.goods %}
+                    <div class="busket{{ forloop.counter }}">
+                        <img  src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}">
+                        <ul class="ul_bottom">
+                            <div class="li_bottom">{{ buket.busketName }}</div>
+                            <div class="li_bottom">가격 : {{ buket.busketPrice }}</div>
+                            <div class="li_bottom">구매처 : {{ buket.busketShop }}</div>
+                        </ul>
+                        <div class="detail_bt">
+                            <a href="{{ buket.busketShopUrl }}"><img src="{% static 'img/자세히 보기.svg' %}" alt="자세히 보기"></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+            </div>
+            <div class="category-box food-u">
+                {% for buket in categories.food %}
+                    <div class="busket{{ forloop.counter }}">
+                        <img  src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}">
+                        <ul class="ul_bottom">
+                            <div class="li_bottom">{{ buket.busketName }}</div>
+                            <div class="li_bottom">가격 : {{ buket.busketPrice }}</div>
+                            <div class="li_bottom">구매처 : {{ buket.busketShop }}</div>
+                        </ul>
+                        <div class="detail_bt">
+                            <a href="{{ buket.busketShopUrl }}"><img src="{% static 'img/자세히 보기.svg' %}" alt="자세히 보기"></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+            </div>
+            <div class="category-box hobby-u">
+                {% for buket in categories.hobby %}
+                    <div class="busket{{ forloop.counter }}">
+                        <img  src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}">
+                        <ul class="ul_bottom">
+                            <div class="li_bottom">{{ buket.busketName }}</div>
+                            <div class="li_bottom">가격 : {{ buket.busketPrice }}</div>
+                            <div class="li_bottom">구매처 : {{ buket.busketShop }}</div>
+                        </ul>
+                        <div class="detail_bt">
+                            <a href="{{ buket.busketShopUrl }}"><img src="{% static 'img/자세히 보기.svg' %}" alt="자세히 보기"></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+            </div>
+            <div class="category-box etc-u">
+                {% for buket in categories.etc %}
+                    <div class="busket{{ forloop.counter }}">
+                        <img  src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}">
+                        <ul class="ul_bottom">
+                            <div class="li_bottom">{{ buket.busketName }}</div>
+                            <div class="li_bottom">가격 : {{ buket.busketPrice }}</div>
+                            <div class="li_bottom">구매처 : {{ buket.busketShop }}</div>
+                        </ul>
+                        <div class="detail_bt">
+                            <a href="{{ buket.busketShopUrl }}"><img src="{% static 'img/자세히 보기.svg' %}" alt="자세히 보기"></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+            </div>
         </div>
 
     </div>
