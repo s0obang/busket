@@ -14,7 +14,7 @@
             <p>새 BUSKET 추가하기</p>
         </div>
 
-        <div class="Spark_61" onclick="">
+        <div class="Spark_61">
             <img src="{% static 'img/Spark 61.svg' %}" alt="Spark_61">
         </div>
 
@@ -25,7 +25,7 @@
 
     </div>
     
-        
+    
         <div class="popup">
     
             <div class="popup_top">
@@ -141,15 +141,72 @@
                 <div class="buskets">
                     {% for buket in bukets %}
                     <div class="busket{{ forloop.counter }}">
-                        <img src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}">
+                        <!-- a 태그로 감싸서 이미지 클릭 시 링크로 이동 -->
+                        <a href="javascript:void(0)" id="popupA" onclick="openPopup('event, {{ buket.Image.url }}')">
+                            <img  src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}">
+                        </a>
                     </div>
                     {% endfor %}
                 </div>
+
         
             </div>
            </div>
 
         </div>
+
+        <div id="popupBuskets">
+    
+            <div class="popup_top">
+                <ul class="popup_ul">
+                    <li class="popup_li">Busket</li>
+                    <li class="popup_li" onclick="closePopup()">X</li>
+                </ul>
+            </div>
+        
+            <form class="popup_bottom" action="{% url 'buket:buket' %}" method="POST">
+                {% csrf_token %}    
+                <ul class="popup_detail">
+        
+                    <div class="detail1">
+                        <li class="p_ques">BUSKET 이름</li>
+                        <div>
+                            <input class="p_yellowbox"  name="busketName">
+                        </div>
+                    </div>
+        
+                    <div class="detail2">
+                        <li class="p_ques">BUSKET 가격</li>
+                        <div>
+                            <input class="p_yellowbox" name="busketPrice">
+                        </div>
+                    </div>
+        
+                    <div class="detail3">
+                        <li class="p_ques">BUSKET 구매처</li>
+                        <div>
+                            <input class="p_yellowbox"  name="busketShop">
+                        </div>
+                        <div>
+                            <input class="p_yellowbox"  name="busketShopUrl">
+                        </div>
+                    </div>
+        
+        
+                    <div class="detail4">
+                        <li class="p_ques que1">카테고리</li>
+                        <div>
+                            <input class="p_yellowbox"  name="busketName">
+                        </div>
+                    </div>
+        
+                </ul>
+        
+            </form>
+            </div>
+            
+        </div>
+    
     </div>
 
     

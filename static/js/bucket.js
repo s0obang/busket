@@ -142,3 +142,28 @@ document.addEventListener('DOMContentLoaded', function () {
         cateSelect(defaultButton); // 기본적으로 '의류' 카테고리가 보이도록 설정
     }
 });
+
+
+function openPopup(event, imageUrl) {
+    const popupBus = document.querySelector('#popupBuskets'); // 팝업 요소 선택
+
+    // 팝업 보이기
+    popupBus.style.display = 'block'; 
+
+    // 팝업 닫기 버튼 클릭 시
+    const closePopupButton = document.querySelector('.close-popup');
+    if (closePopupButton) {
+        closePopupButton.addEventListener('click', function() {
+            closePopup();
+        });
+    }
+}
+
+// 팝업을 닫는 함수
+function closePopup() {
+    const popupBus = document.querySelector('#popupBuskets'); // 팝업 요소 선택
+
+    // 팝업 숨기기
+    if (popupBus) popupBus.style.display = 'none';
+}
+
