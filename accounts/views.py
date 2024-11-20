@@ -4,11 +4,17 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.models import User
 from .models import Profile
 from .forms import ProfileForm
+from django.contrib import messages
+
 # from .forms import 
 
 #password1:비밀번호, password2:비밀번호확인, username:ID
 
 def signup(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password1 = request.POST['password1']
+        password2 = request.POST['password2']
     if request.method=='POST':
         if request.POST['password1']==request.POST['password2']:
             user=User.objects.create_user(
@@ -17,8 +23,8 @@ def signup(request):
             )
             auth.login(request, user)
             return redirect('home:home')
-        return render(request, 'signup_test.html')
-    return render(request, 'signup_test.html')
+        return render(request, 'signup.html')
+    return render(request, 'signup.html')
 
 
 def login(request):
@@ -30,18 +36,22 @@ def login(request):
             auth.login(request, user)
             return redirect('home:home')
         else:
-            return render(request, 'login_test.html')
+            return render(request, 'login.html')
     else:
-        return render(request, 'login_test.html')
+        return render(request, 'login.html')
 
 def logout(request):
     auth.logout(request)
     return redirect('home:home')
 
+
+def notloginmy(request):
+    return render(request, 'my.html')
+
 def my(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     profile=get_object_or_404(Profile, user=user)
-    return render(request, 'my_test.html', {'profile':profile})
+    return render(request, 'my.html', {'profile':profile})
 
 #my_update : 프로필 수정 함수
 #profile_update_form : 프로필 수정 폼
@@ -62,5 +72,5 @@ def my_update(request, user_id):
         'profile_update_form':profile_update_form,
         'user_id':user_id
         }
-    return render(request,'my_update_test.html',context)
+    return render(request,'my.html',context)
     # Create your views here.
