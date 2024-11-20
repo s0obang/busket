@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import signup, login, notloginmy, logout, my_update, my
+from .views import signup, login, notloginmy, logout, my
 
 app_name='accounts'
 
@@ -9,5 +9,4 @@ urlpatterns = [
     path('logout/', logout, name='logout'),
     path('my/notlogin', notloginmy, name='notloginmy'),
     path('my/<int:user_id>', my, name='my'),
-    path('my/<int:user_id>/update', my_update, name='my_update')
 ]

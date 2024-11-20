@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'home',
     'buket',
     'accounts',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
