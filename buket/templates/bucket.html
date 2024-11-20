@@ -161,6 +161,7 @@
                 </ul>
             </div>
         <!--이부분은 input태그일 필요가 없어요 입력을 받는게 아니고 값을 보여주는거니깐~~ form일 필요도 없음!!-->
+        <!-- 네!!!! -->
             <div class="popup_bottom">   
                 <ul class="popup_detail">
         
@@ -221,27 +222,32 @@
         <div class="bottpink_wrap">
             <div class="clothes-u selected2">
 
-                    {% for buket in categories.clothes %}
-                    <div class="busket{{ forloop.counter }}">
-                        <img  src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}">
-                        <ul class="ul_bottom">
-                            <div class="li_bottom">{{ buket.busketName }}</div>
-                            <div class="li_bottom">가격 : {{ buket.busketPrice }}</div>
-                            <div class="li_bottom">구매처 : {{ buket.busketShop }}</div>
-                        </ul>
-                        <div class="detail_bt">
-                            <a href="{{ buket.busketShopUrl }}"><img src="{% static 'img/자세히 보기.svg' %}" alt="자세히 보기"></a>
-                        </div>
+                {% for buket in categories.clothes %}
+                <div class="busket{{ forloop.counter }}" id="busketLoop">
+                    <div id="busketLoopImg">
+                        <img src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}" >
+                    </div>                    
+                    <ul class="ul_bottom">
+                        <li class="li_bottom">{{ buket.busketName }}</li>
+                        <li class="li_bottom">가격 : {{ buket.busketPrice }}</li>
+                        <li class="li_bottom">구매처 : {{ buket.busketShop }}</li>
+                    </ul>
+                    <div class="detail_bt">
+                        <a href="{{ buket.busketShopUrl }}"><img src="{% static 'img/자세히 보기.svg' %}" alt="자세히 보기"></a>
                     </div>
-                    {% endfor %}
+                </div>
+                {% endfor %}
+                
 
             </div>
 
             <!-- 카테고리 별 divs, 클래스 추가 -->
             <div class="category-box interior-u">
                     {% for buket in categories.interior %}
-                    <div class="busket{{ forloop.counter }}">
-                        <img  src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}">
+                    <div class="busket{{ forloop.counter }}" id="busketLoop">
+                        <div id="busketLoopImg">
+                            <img src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}" >
+                        </div>                        
                         <ul class="ul_bottom">
                             <div class="li_bottom">{{ buket.busketName }}</div>
                             <div class="li_bottom">가격 : {{ buket.busketPrice }}</div>
@@ -255,8 +261,10 @@
             </div>
             <div class="category-box goods-u">
                 {% for buket in categories.goods %}
-                    <div class="busket{{ forloop.counter }}">
-                        <img  src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}">
+                    <div class="busket{{ forloop.counter }}"  id="busketLoop">
+                        <div id="busketLoopImg">
+                            <img src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}" >
+                        </div>                        
                         <ul class="ul_bottom">
                             <div class="li_bottom">{{ buket.busketName }}</div>
                             <div class="li_bottom">가격 : {{ buket.busketPrice }}</div>
@@ -268,10 +276,12 @@
                     </div>
                     {% endfor %}
             </div>
-            <div class="category-box food-u">
+            <div class="category-box food-u" >
                 {% for buket in categories.food %}
-                    <div class="busket{{ forloop.counter }}">
-                        <img  src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}">
+                    <div class="busket{{ forloop.counter }}" id="busketLoop">
+                        <div id="busketLoopImg">
+                            <img src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}" >
+                        </div>                        
                         <ul class="ul_bottom">
                             <div class="li_bottom">{{ buket.busketName }}</div>
                             <div class="li_bottom">가격 : {{ buket.busketPrice }}</div>
@@ -285,8 +295,10 @@
             </div>
             <div class="category-box hobby-u">
                 {% for buket in categories.hobby %}
-                    <div class="busket{{ forloop.counter }}">
-                        <img  src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}">
+                    <div class="busket{{ forloop.counter }}" id="busketLoop">
+                        <div id="busketLoopImg">
+                            <img src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}" >
+                        </div>                       
                         <ul class="ul_bottom">
                             <div class="li_bottom">{{ buket.busketName }}</div>
                             <div class="li_bottom">가격 : {{ buket.busketPrice }}</div>
@@ -300,8 +312,10 @@
             </div>
             <div class="category-box etc-u">
                 {% for buket in categories.etc %}
-                    <div class="busket{{ forloop.counter }}">
-                        <img  src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}">
+                    <div class="busket{{ forloop.counter }}" id="busketLoop">
+                        <div id="busketLoopImg">
+                            <img src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}" >
+                        </div>
                         <ul class="ul_bottom">
                             <div class="li_bottom">{{ buket.busketName }}</div>
                             <div class="li_bottom">가격 : {{ buket.busketPrice }}</div>

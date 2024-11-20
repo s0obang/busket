@@ -40,7 +40,7 @@ def buket(request):
         )
         buket.save()
 
-    bukets = Buket.objects.filter(user=request.user)   
+    bukets = Buket.objects.filter(user=request.user).filter(isBuy=False) 
 
     #이 아래가 categorie별로 리턴하는거야
     categories = {
@@ -52,6 +52,16 @@ def buket(request):
         "etc": bukets.filter(busketCategory="기타"),
     }
     return render(request, 'bucket.html', {'bukets': bukets, 'categories': categories})
+
+
+@login_required
+def buy(request):
+
+    bukets = Buket.objects.filter(user=request.user).filter(isBuy=False)
+    buketsBuy = Buket.objects.filter(user=request.user).filter(isBuy=True)  
+
+
+    return render(request, 'buy.html', {'bukets': bukets, 'buketsBuy':buketsBuy})
 
 
 
