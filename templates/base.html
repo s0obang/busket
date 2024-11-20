@@ -24,7 +24,7 @@
                 {% if user.is_authenticated %}
                 <li class="my"><a href="{% url 'accounts:my' user.id %}">MY</a></li>
                 {%else%}
-                <li class="my">MY</li>
+                <li class="my"><a href="{% url 'accounts:notloginmy' %}">MY</a></li>
                 {%endif%}
             </ul>
         </header>
