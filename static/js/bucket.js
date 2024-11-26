@@ -144,11 +144,23 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-function openPopup(event, imageUrl) {
-    const popupBus = document.querySelector('#popupBuskets'); // 팝업 요소 선택
+function openPopup(busketName, busketPrice, busketShop, busketShopUrl, busketCategory) {
+    const popupBus = document.querySelector('#popupBuskets');
+    popupBus.style.display = 'block';
 
-    // 팝업 보이기
-    popupBus.style.display = 'block'; 
+    // 팝업 요소에 데이터 설정
+    popupBus.querySelector('.busketName').textContent = busketName || 'N/A';
+    popupBus.querySelector('.busketPrice').textContent = busketPrice || 'N/A';
+    popupBus.querySelector('.busketShop').textContent = busketShop || 'N/A';
+
+    // Shop URL 설정 (클릭 가능 링크)
+    const shopUrlElement = popupBus.querySelector('.busketShopUrl');
+    if (shopUrlElement) {
+        shopUrlElement.textContent = busketShopUrl || 'N/A';
+        shopUrlElement.href = busketShopUrl || '#'; // 유효하지 않은 경우 링크 비활성화
+    }
+
+    popupBus.querySelector('.busketCategory').textContent = busketCategory || 'N/A';
 
     // 팝업 닫기 버튼 클릭 시
     const closePopupButton = document.querySelector('.close-popup');
@@ -162,7 +174,6 @@ function openPopup(event, imageUrl) {
 // 팝업을 닫는 함수
 function closePopup() {
     const popupBus = document.querySelector('#popupBuskets'); // 팝업 요소 선택
-
     // 팝업 숨기기
     if (popupBus) popupBus.style.display = 'none';
 }
