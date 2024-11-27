@@ -26,7 +26,7 @@
         {%else%}
         <img src="{% static 'img/accounts/프로필사진.svg' %}" id="picture">
         <div>
-            <h1 class="name"> 닉네임 님 </h1>
+            <h1 class="name"> 로그인해주세요. </h1>
         </div>
         {%endif%}
 
@@ -68,12 +68,12 @@
                 <form method="post" action ={%url 'accounts:signup'%} class="user_form">
                     {% csrf_token %}
                     <h1>회원가입</h1>
-                    <h3> 닉네임 </h3>
-                    <input type="text" name="username" placeholder="name">
+                    <h3> 아이디 </h3>
+                    <input type="text" name="username" placeholder="ID">
                     <h3> 비밀번호 </h3>
-                    <input type="password" name="password1" placeholder="password">
+                    <input type="password" name="password1" placeholder="PW">
                     <h3> 비밀번호 확인 </h3>
-                    <input type="password" name="password2" placeholder="password">
+                    <input type="password" name="password2" placeholder="PW">
                     <input type="submit" value="회원가입 ">
                 </form>
             </div>
@@ -90,6 +90,13 @@
                         <h2>프로필 수정</h2>
                         <h3>닉네임</h3>
                         {{ profile_update_form.nickname }}
+                        {% if profile_update_form.nickname.errors %}
+                            <ul class="profile_update_error_messages">
+                                {% for error in profile_update_form.nickname.errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
                         <h3>프로필 사진</h3>
                         <div class="profile">
                             <label class="profile_img_button" for="profile_img"> 
