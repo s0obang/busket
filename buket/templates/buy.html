@@ -13,6 +13,7 @@
             <div class="sc1">
                 {% for buket in bukets %}
                 <div class="busket">
+                    <input type="hidden" class="id" value="{{ buket.id}}">
                     <input type="checkbox" name="" id="">
                     <img src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}"
                         data-price="{{ buket.busketPrice }}" id="popupA"
@@ -39,7 +40,7 @@
 
                 <div class="add-btn">
                     <div class="count"></div>
-                    <button>ADD</button>
+                    <button class="add-button">ADD</button>
                 </div>
             </div>
         </div>
