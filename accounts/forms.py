@@ -11,5 +11,11 @@ class ProfileForm(forms.ModelForm):
         widgets = {
             'userImage': CustomClearableFileInput(),  # 커스텀 위젯 사용
         }
+        
+    def clean_nickname(self):
+        nickname = self.cleaned_data.get('nickname')
+        if Profile.objects.filter(nickname=nickname).exclude(pk=self.instance.pk).exists():
+            raise forms.ValidationError("이미 사용 중인 닉네임입니다.")
+        return nickname
 
     
