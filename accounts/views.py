@@ -36,7 +36,7 @@ def login(request):
             auth.login(request, user)
             return redirect('home:home')
         else:
-            return render(request, 'login.html')
+            return redirect('home:home')
     else:
         return render(request, 'login.html')
 
@@ -59,8 +59,9 @@ def my(request, user_id):
         if profile_update_form.is_valid():
             profile_update_form.save()
             return redirect('accounts:my',user_id)     
-        else:
-            return redirect('accounts:my',user_id)
+        # else:
+            # return redirect('accounts:my',user_id)
+            # 유효하지 않은 경우 동작 (에러를 표시하거나 다시 렌더링)
     context = {
         'profile':profile,
         'profile_update_form':profile_update_form,
