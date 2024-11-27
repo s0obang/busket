@@ -5,11 +5,14 @@
 .buket_wrap {
     width: 90%;
     margin: 0 auto;
+    overflow-x: hidden;
     z-index: 66;
 
 }
 
-.wrap {position: relative;}
+.wrap {
+    position: relative;
+}
 
 .Add {
     display: flex;
@@ -21,7 +24,8 @@
 
 .Spark_61 {
     position: absolute;
-    top: 30px; right: 30px;
+    top: 30px;
+    right: 30px;
 }
 
 .Emptybusket {
@@ -37,23 +41,28 @@
 
 }
 
-p { margin: 0; }
+.wrap2  p {
+    font-size: 25px;
+    font-weight: 700;
+
+}
 
 .Busket_ing {
     position: relative;
-    left: 100px;
-    font-size: 32px;
-    margin: 180px 0 20px 0;
+    margin: 50px 0;
 }
 
-.wrap2 { 
+.wrap2 {
     position: relative;
     margin-bottom: 470px;
+    width: 1200px;
+    margin: 0 auto;
     z-index: 1;
 }
 
 
-.Brutalist_99, .Rectangle_15 {
+.Brutalist_99,
+.Rectangle_15 {
     display: flex;
     justify-content: center;
 }
@@ -71,24 +80,29 @@ p { margin: 0; }
     background-color: #FFF5CF;
     display: flex;
     justify-content: center;
-    align-items: center; /* 세로 가운데 정렬 */
+    align-items: center;
+    /* 세로 가운데 정렬 */
 }
 
 .wrap3 {
     display: grid;
-    gap: 20px; /* 그리드 아이템 간격 */
+    gap: 20px;
+    /* 그리드 아이템 간격 */
     padding: 20px;
     width: 100%;
-    max-width: 1200px; /* 최대 너비 제한 */
-    margin: 0 auto; /* 중앙 정렬 */
+    max-width: 1200px;
+    /* 최대 너비 제한 */
+    margin: 0 auto;
+    /* 중앙 정렬 */
 }
 
 .buskets {
     display: grid;
     width: 100%;
 
-    grid-template-columns: repeat(5, 1fr); 
-    gap: 20px; /* 그리드 간격 */
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    /* 그리드 간격 */
 }
 
 
@@ -101,8 +115,9 @@ p { margin: 0; }
 
 
 
-.buskets *{ 
-    display: flex;}
+.buskets * {
+    display: flex;
+}
 
 
 
@@ -122,7 +137,8 @@ p { margin: 0; }
 .pinkbox_top {
 
     display: flex;
-    flex-direction: row;}
+    flex-direction: row;
+}
 
 .pinkbox_top2 {
     width: 200px;
@@ -134,7 +150,7 @@ p { margin: 0; }
     cursor: pointer;
 }
 
-#btn-cl { 
+#btn-cl {
     border-radius: 30px 0 0 0;
 }
 
@@ -147,7 +163,9 @@ p { margin: 0; }
 }
 
 
-.pinkbox_top2:nth-child(6) {border-radius: 0 30px 0 0;}
+.pinkbox_top2:nth-child(6) {
+    border-radius: 0 30px 0 0;
+}
 
 
 .li_top {
@@ -164,9 +182,17 @@ button li .li_top {
     justify-content: center;
 }
 
-.bottpink_wrap { position: relative;}
+.bottpink_wrap {
+    position: relative;
+}
 
-.selected2, .category-box, clothes-u, .interior-u, .goods-u, .food-u, .hobby-u {
+.selected2,
+.category-box,
+clothes-u,
+.interior-u,
+.goods-u,
+.food-u,
+.hobby-u {
     background-color: rgb(252 243 242);
     width: 1200px;
     min-height: 1286px;
@@ -189,11 +215,13 @@ button li .li_top {
 }
 
 .category-box {
-    display: none; /* 기본적으로 숨기기 */
+    display: none;
+    /* 기본적으로 숨기기 */
 }
 
 .selected2 {
-    display: block; /* 기본적으로 'selected2'는 보이도록 설정 */
+    display: block;
+    /* 기본적으로 'selected2'는 보이도록 설정 */
 }
 
 .busket8_2 {
@@ -230,21 +258,25 @@ popup ::after {
 
 /* 오버레이 배경 (팝업이 열린 상태에서 배경 흐림 효과 적용) */
 .overlay {
-    display: none; /* 기본적으로 숨김 */
+    display: none;
+    /* 기본적으로 숨김 */
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* 어두운 배경 */
-    backdrop-filter: blur(5px); /* 배경 흐림 효과 */
-    z-index: 2; /* 팝업보다 아래에 */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 어두운 배경 */
+    backdrop-filter: blur(5px);
+    /* 배경 흐림 효과 */
+    z-index: 2;
+    /* 팝업보다 아래에 */
 }
 
 
 .popup {
     display: none;
-    position:absolute;
+    position: absolute;
     top: 60px;
     left: calc(50% - 350px);
     z-index: 100;
@@ -263,7 +295,8 @@ popup ::after {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 0; padding: 0 30px;
+    margin: 0;
+    padding: 0 30px;
     line-height: 50px;
     font-weight: bold;
     font-size: 20px;
@@ -292,9 +325,9 @@ popup ::after {
     display: flex;
     flex-direction: column;
     align-items: center;
-} 
+}
 
-.popup_bottom .busket-options{
+.popup_bottom .busket-options {
     display: flex;
 
     white-space: nowrap;
@@ -303,20 +336,24 @@ popup ::after {
     padding-top: 100px;
     justify-content: center;
     align-items: center;
-    
+
 }
-.popup_bottom .busket-options label{
+
+.popup_bottom .busket-options label {
     display: flex;
     width: 150px;
     height: 150px;
 }
-.popup_bottom .busket-options label img{
+
+.popup_bottom .busket-options label img {
     width: 100px;
 }
-.popup_bottom .busket-options label input{
+
+.popup_bottom .busket-options label input {
     width: 30px;
     height: 30px;
 }
+
 .p_yellowbox {
     width: 450px;
     height: auto;
@@ -324,23 +361,29 @@ popup ::after {
     border: 2px solid #FFD950;
     border-radius: 30px;
     margin: 10px 0 0 0;
-    line-height: 50px; 
+    line-height: 50px;
     font-size: 20px;
     padding: 0 20px;
     overflow: auto;
 }
 
-.p_ques {font-size: 20px;}
+.p_ques {
+    font-size: 20px;
+}
 
 select.p_yellowbox {
     width: 513px;
     height: 56px;
 }
 
-.p_yellowbox:focus {outline: none;}
+.p_yellowbox:focus {
+    outline: none;
+}
 
 
-input.p_yellowbox::placeholder { text-align: right; }
+input.p_yellowbox::placeholder {
+    text-align: right;
+}
 
 .p_option {
     text-align: left;
@@ -358,16 +401,22 @@ input.p_yellowbox::placeholder { text-align: right; }
 }
 
 .Addbutton img {
-    width: 200px; height:140px;
+    width: 200px;
+    height: 140px;
 }
 
-.detail1, .detail2, .detail3, .detail4 {margin-bottom: 35px;}
+.detail1,
+.detail2,
+.detail3,
+.detail4 {
+    margin-bottom: 35px;
+}
 
 #popupBuskets {
     display: none;
-    position:absolute;
+    position: absolute;
     flex-direction: column;
     top: 60px;
     left: calc(50% - 350px);
-    z-index: 100;}
-
+    z-index: 100;
+}

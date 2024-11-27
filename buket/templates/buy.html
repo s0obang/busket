@@ -4,6 +4,7 @@
 
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/buy.css' %}">
+<script src="{% static 'js/buy.js' %}"></script>
 <div class="buy_wrap">
     <img class="bcg-img" src="{% static 'img/buy/Basket.svg' %}">
     <div class="top">
@@ -11,29 +12,35 @@
         <div class="wrap">
             <div class="sc1">
                 {% for buket in bukets %}
-                    <div class="busket">
-                        <input type="checkbox" name="" id="">
-                        <img  src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}" id="popupA" onclick="openPopup('{{ buket.busketName }}', '{{ buket.busketPrice }}','{{ buket.busketShop }}','{{ buket.busketShopUrl }}','{{ buket.busketCategory }}')"> 
-                        <div class="item-name">{{ buket.busketName }}</div> 
-                    </div>
-                    {% endfor %}
+                <div class="busket">
+                    <input type="hidden" class="id" value="{{ buket.id}}">
+                    <input type="checkbox" name="" id="">
+                    <img src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}"
+                        data-price="{{ buket.busketPrice }}" id="popupA"
+                        onclick="openPopup('{{ buket.busketName }}', '{{ buket.busketPrice }}','{{ buket.busketShop }}','{{ buket.busketShopUrl }}','{{ buket.busketCategory }}')">
+                    <div class="item-name">{{ buket.busketName }}</div>
+                </div>
+                {% endfor %}
             </div>
             <div class="sc2">
                 <div class="cal">
-                    <div class="name">
-                        <h2>비스켓</h2>
+         
+                        <div class="name">
+                            <h2></h2>
 
-                    </div>
-                    <div class="line"> </div>
-                    <div class="cost">
-                        <h2>+ <span>5000fdddddd0</span></h2>
-                    </div>
+                        </div>
+
+                        <div class="cost">
+                            <h2>+ <span></span></h2>
+                        </div>
+                 
+
                 </div>
-                <div class="sum-cost">총 <span>1111111</span></div>
+                <div class="sum-cost">총 <span></span></div>
 
                 <div class="add-btn">
-                    <div class="count">2</div>
-                    <button>ADD</button>
+                    <div class="count"></div>
+                    <button class="add-button">ADD</button>
                 </div>
             </div>
         </div>
@@ -42,11 +49,12 @@
         <div class="title">구매한 비스켓</div>
         <div class="wrap">
             {% for buket in buketsBuy %}
-                <div class="busket">
-                    <input type="checkbox" name="" id="">
-                    <img  src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}" id="popupA" onclick="openPopup('{{ buket.busketName }}', '{{ buket.busketPrice }}','{{ buket.busketShop }}','{{ buket.busketShopUrl }}','{{ buket.busketCategory }}')"> 
-                    <div class="item-name">{{ buket.busketName }}</div> 
-                </div>
+            <div class="busket">
+                <input type="checkbox" name="" id="">
+                <img src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}" id="popupA"
+                    onclick="openPopup('{{ buket.busketName }}', '{{ buket.busketPrice }}','{{ buket.busketShop }}','{{ buket.busketShopUrl }}','{{ buket.busketCategory }}')">
+                <div class="item-name">{{ buket.busketName }}</div>
+            </div>
             {% endfor %}
         </div>
         <button class="delete">BUCKET 비우기</button>

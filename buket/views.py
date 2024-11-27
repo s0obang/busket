@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import JsonResponse
 from .models import Buket
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import json
 
 
 def buy(request):
@@ -59,7 +62,13 @@ def buy(request):
 
     bukets = Buket.objects.filter(user=request.user).filter(isBuy=False)
     buketsBuy = Buket.objects.filter(user=request.user).filter(isBuy=True)  
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        selected_ids = data.get('selectedIds', [])
+        bukets_to_update = Buket.objects.filter(id__in=selected_ids, user=request.user)
+        bukets_to_update.update(isBuy=True)
 
+        return render(request, 'buy.html', {'bukets': bukets, 'buketsBuy':buketsBuy})
 
     return render(request, 'buy.html', {'bukets': bukets, 'buketsBuy':buketsBuy})
 
