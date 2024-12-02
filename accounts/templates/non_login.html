@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="non-login">
+<h2>로그인 후 이용이 가능한 페이지입니다.</h2>
+<h3>로그인을 진행하여 BUSKET의 모든 기능을 사용해보세요!</h3>
+<a href="{% url 'home:home' %}">로그인 하러 가기</a>
+</div>
+
+{% endblock %}
