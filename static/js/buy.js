@@ -42,14 +42,13 @@ document.addEventListener('DOMContentLoaded', function () {
     checkboxes.forEach((checkbox) => {
         checkbox.addEventListener('change', updateSelectedItems);
     });
-
     addButton.addEventListener('click', function () {
         const selectedIds = [];
 
         checkboxes.forEach((checkbox) => {
             if (checkbox.checked) {
                 const busket = checkbox.closest('.busket');
-                const itemId = parseInt(busket.querySelector('.id').value, 10); // ID를 숫자로 변환
+                const itemId = parseInt(busket.querySelector('.id').value, 10);
                 selectedIds.push(itemId);
             }
         });
@@ -61,13 +60,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     'Content-Type': 'application/json',
                     'X-CSRFToken': getCookie('csrftoken'),
                 },
-                body: JSON.stringify({ selectedIds: selectedIds }), // ID 배열만 전송
+                body: JSON.stringify({ selectedIds: selectedIds }), 
             })
-                .then((response) => response.json())
-                .then((data) => {
-                    if (data.success) {
+                .then((response) => {
+                    if (response.ok) {
                         alert('선택한 비스켓들이 성공적으로 추가되었습니다!');
-                        location.reload(true);
+                        window.location.reload();
                     } else {
                         alert('문제가 발생했습니다. 다시 시도해주세요.');
                     }
@@ -79,7 +77,6 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('선택한 비스켓이 없습니다.');
         }
     });
-
     function getCookie(name) {
         let cookieValue = null;
         if (document.cookie && document.cookie !== '') {
