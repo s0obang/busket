@@ -5,6 +5,7 @@
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/buy.css' %}">
 <script src="{% static 'js/buy.js' %}"></script>
+{%if user.is_authenticated %}
 <div class="buy_wrap">
     <img class="bcg-img" src="{% static 'img/buy/Basket.svg' %}">
     <div class="top">
@@ -60,6 +61,13 @@
         <button class="delete">BUCKET 비우기</button>
     </div>
 </div>
+{% else %}
+    <div class="non-login">
+        <h2>로그인 후 이용이 가능한 페이지입니다.</h2>
+        <h3>로그인을 진행하여 BUSKET의 모든 기능을 사용해보세요!</h3>
+        <a href="{% url 'accounts:notloginmy' %}">로그인 하러 가기</a>
+    </div>  
+    {% endif %}
 
 
 {% endblock %}
