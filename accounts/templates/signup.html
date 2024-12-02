@@ -15,14 +15,15 @@
         <div class="modal"> <!--회원가입 모달창-->
             <div class="modal_body"> <!--회원가입 모달창 내용-->
                 <div class="container">
-                    <form class="user_form">
+                    <form method="post" action ={%url 'accounts:signup'%}  class="user_form">
+                        {% csrf_token %}
                         <h1>회원가입</h1>
                         <h3> 닉네임 </h3>
-                        <input type="text" placeholder="name">
+                        <input type="text" name="username" placeholder="name">
                         <h3> 비밀번호 </h3>
-                        <input type="password" placeholder="password">
+                        <input type="password" name="password1" placeholder="password">
                         <h3> 비밀번호 확인 </h3>
-                        <input type="password" placeholder="password">
+                        <input type="password" name="password2" placeholder="password">
                         <input type="submit" value="회원가입 ">
                     </form>
                 </div>

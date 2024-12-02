@@ -10,47 +10,13 @@
         <div class="title">BUSKET을 선택하여 구매한 비스켓으로 옮기기</div>
         <div class="wrap">
             <div class="sc1">
-                <div class="busket">
-                    <input type="checkbox" name="" id="">
-                    <img src="{% static 'img/buy/busket.svg' %}" alt="">
-                    <div class="item-name">아이폰 신상</div>
-                </div>
-                <div class="busket">
-                    <input type="checkbox" name="" id="">
-                    <img src="{% static 'img/buy/busket.svg' %}" alt="">
-                    <div class="item-name">아이폰 신상</div>
-                </div>
-                <div class="busket">
-                    <input type="checkbox" name="" id="">
-                    <img src="{% static 'img/buy/busket.svg' %}" alt="">
-                    <div class="item-name">아이폰 신상</div>
-                </div>
-                <div class="busket">
-                    <input type="checkbox" name="" id="">
-                    <img src="{% static 'img/buy/busket.svg' %}" alt="">
-                    <div class="item-name">아이폰 신상</div>
-                </div>
-                <div class="busket">
-                    <input type="checkbox" name="" id="">
-                    <img src="{% static 'img/buy/busket.svg' %}" alt="">
-                    <div class="item-name">아이폰 신상</div>
-                </div>
-                <div class="busket">
-                    <input type="checkbox" name="" id="">
-                    <img src="{% static 'img/buy/busket.svg' %}" alt="">
-                    <div class="item-name">아이폰 신상</div>
-                </div>
-                <div class="busket">
-                    <input type="checkbox" name="" id="">
-                    <img src="{% static 'img/buy/busket.svg' %}" alt="">
-                    <div class="item-name">아이폰 신상</div>
-                </div>
-                <div class="busket">
-                    <input type="checkbox" name="" id="">
-                    <img src="{% static 'img/buy/busket.svg' %}" alt="">
-                    <div class="item-name">아이폰 신상</div>
-                </div>
-
+                {% for buket in bukets %}
+                    <div class="busket">
+                        <input type="checkbox" name="" id="">
+                        <img  src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}" id="popupA" onclick="openPopup('{{ buket.busketName }}', '{{ buket.busketPrice }}','{{ buket.busketShop }}','{{ buket.busketShopUrl }}','{{ buket.busketCategory }}')"> 
+                        <div class="item-name">{{ buket.busketName }}</div> 
+                    </div>
+                    {% endfor %}
             </div>
             <div class="sc2">
                 <div class="cal">
@@ -75,10 +41,13 @@
     <div class="bot">
         <div class="title">구매한 비스켓</div>
         <div class="wrap">
-            <div class="busket">
-                <img src="{% static 'img/buy/busket.svg' %}" alt="">
-                <div class="item-name">아이폰 신상</div>
-            </div>
+            {% for buket in buketsBuy %}
+                <div class="busket">
+                    <input type="checkbox" name="" id="">
+                    <img  src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}" id="popupA" onclick="openPopup('{{ buket.busketName }}', '{{ buket.busketPrice }}','{{ buket.busketShop }}','{{ buket.busketShopUrl }}','{{ buket.busketCategory }}')"> 
+                    <div class="item-name">{{ buket.busketName }}</div> 
+                </div>
+            {% endfor %}
         </div>
         <button class="delete">BUCKET 비우기</button>
     </div>

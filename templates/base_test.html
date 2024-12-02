@@ -11,35 +11,36 @@
 
 <body style="background-image:url({% static 'img/background.svg' %})">
     <div class="wrap">
-        <header/Scripts/activate class="main-header">
+        <header class="main-header">
             <div class="logo">
                 <a href="/">
                 <img src="{% static 'img/logo.svg' %}" alt="logo"/>
             </a>
             </div>
             <ul class="category">
-                <li class="home"><a href="{% url 'home:home' %}">HOME</a></li>
-                <li class="buy"><a href="{% url 'buket:buy' %}">BUY</a></li>
-                <li class="bucket"><a href="{% url 'buket:buket' %}">BUCKET</a></li>
+                <li class="buy">BUY</li>
+                <li class="bucket">BUCKET</li>
+                <li class="share">SHARE</li>
+                {% comment %} 로그인 되어있을 때와 로그아웃 되어있을 때 MY 버튼 다르게 설정(보이는 건 같음) {% endcomment %}
                 {% if user.is_authenticated %}
                 <li class="my"><a href="{% url 'accounts:my' user.id %}">MY</a></li>
                 {%else%}
-                <li class="my"><a href="{% url 'accounts:notloginmy' %}">MY</a></li>
+                <li class="my">MY</li>
                 {%endif%}
             </ul>
         </header>
-        
+        <main>
             {% block content %}
 
             {% endblock %}
-        
-            <footer class="main-footer">
-                <div class="inner">
-                    <p>ⓒ SSWU_WAGI 2기 Team.WEB</p>
-                    <p class="member">BACKEND 조수빈 손정민 <br /> FRONTEND 최수진 백수진 이가윤 이예솔</p>
-                </div>
-            </footer>
+        </main>
 
+        <footer class="main-footer">
+            <div class="inner">
+                <p>ⓒ SSWU_WAGI 2기 Team.WEB</p>
+                <p class="member">BACKEND 조수빈 손정민 <br /> FRONTEND 최수진 백수진 김가윤</p>
+            </div>
+        </footer>
     </div>
 </body>
 
