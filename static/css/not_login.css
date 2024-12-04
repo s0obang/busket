@@ -1,0 +1,29 @@
+.list{
+    width:1000px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    padding: 40px 60px;
+    flex-direction: row;
+    margin: 0 auto;
+    font-size: x-large;
+}
+.biscuit{
+    display: inline;
+    size: 500px;
+}
+.explanation{
+    display: inline;
+    text-align: center;
+}
+.explanation a{
+    text-decoration: none;
+    color: #1883E5;
+}
+.explanation a:hover{
+    color: #1362ac;
+}
+.right{
+    float: right;
+    margin-left: 150px;
+}
