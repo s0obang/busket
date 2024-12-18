@@ -1,9 +1,49 @@
 {% extends "base.html" %}
 {% load static %}
-
-
 {% block content %}
 
-<p>홈</p>
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<script src="{% static 'js/home.js' %}"></script>
+
+<div class="main-content">
+
+    <div class="flower"><img src="{% static 'img/home/flower.png' %}" width="140px" alt="Icon"></div>
+
+    <div class="home_container">
+        <div class="box1">
+            <div class="icon"><img src="{% static 'img/home/home1.png' %}" width="300px" alt="Icon"></div>
+            <div class="text1">
+                <p>BUSKET은 <br> 가장 긍정적인 소비를 도와주는 <br> 기록 & 쇼핑 서비스입니다.</p></div>
+        </div>
+
+        <div class="box2">
+            <div class="text2"><p>살까? 말까? 망설였던 <br> 위시리스트를 이곳에 정리하고 <br> 비교해보세요!</p></div>
+            <div class="vs-icon"><img src="{% static 'img/home/home2.png' %}" width="210px" alt="VS"></div>
+        </div>          
+
+        <div class="box3">
+            <div class="share-icon"><img src="{% static 'img/home/home3.png' %}" width="260px" alt="Share"></div>
+            <div class="text3"><p>결정에 도움을 받거나, <br> 나의 소비 카테고리 분석도 <br> 확인할 수 있습니다.</p></div>
+        </div>
+    </div>
+
+    <div class="home4">
+        <div class="home4"><img src="{% static 'img/home/home4.png' %}" width="150px" alt="home4"></div>
+    </div>
+    
+    <div class="home5_container">
+        <div class="home5"><img src="{% static 'img/home/home5.png' %}" width="130px" alt="home4"></div>
+    </div>
+
+    <div class="promotion">
+        <p>이건 담아야 해! HUNNY BUSKET 정보!</p>
+        <div class="scrollpromo">
+            <div class="promo"><img src="{% static 'img/home/promo1.png' %}" width="1281px" alt="promo1"></div>
+            <div class="promo"><img src="{% static 'img/home/promo2.png' %}" width="1281px" alt="promo2"></div>
+            <div class="promo"><img src="{% static 'img/home/promo3.png' %}" width="1281px" alt="promo3"></div>
+        </div>
+    </div>
+
+</div>
 
 {% endblock %}

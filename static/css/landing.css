@@ -1,0 +1,73 @@
+.popup {
+    width: 1109px;
+    height: 770px;
+    margin: 20px auto;
+    border: 2px solid black;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.landing-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #bde6d7;
+    color: #000;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}
+
+.landing-header p{
+    font-size: 21px;
+    margin-left: 20px;
+}
+
+.closebtn {
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 20px;
+    background: none;
+    border: none;
+    font-size: 25px;
+}
+
+.content {
+    text-align: center;
+    padding: 20px;
+}
+
+.busketimg {
+    margin-top: 30px;
+    width: 297px;
+    height: 298px;
+}
+
+.content h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.text {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.footer {
+    margin-top: -15px;
+    font-size: 24px;
+    color: #333;
+    float: right;
+    margin-right: 30px;
+}
+
+.checkbox{
+    width: 23px;
+    height: 23px;
+}
+
+.footer input {
+    margin-left: 5px;
+}

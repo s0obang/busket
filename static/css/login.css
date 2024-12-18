@@ -1,0 +1,14 @@
+.login_btn, .logout_btn{
+    display: block;
+    width: 300px;
+    padding: 25px;
+    margin: 10px 100px;
+
+    border: 0;
+    border-radius: 10px;
+    background-color: #35C386;
+
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+}

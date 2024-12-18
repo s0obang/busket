@@ -1,11 +1,194 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% load widget_tweaks %}
+
+<link rel="stylesheet" href="{% static 'css/my.css' %}">
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<link rel="stylesheet" href="{% static 'css/user.css' %}">
+<link rel="stylesheet" href="{% static 'css/modal.css' %}">
+<script src="{% static 'js/modal.js' %}"></script> 
+<script src="{% static 'js/profile.js' %}"></script> 
+
+<div class="whole">
+    <img src="{% static 'img/accounts/별.svg' %}" id="spark">
+    <img src="{% static 'img/accounts/동그라미.svg' %}" id="rectangle">
+
+    <div class="profile"> <!--상단 프로필 정보-->
+        {% if user.is_authenticated %}
+        {% if profile.userImage %}
+            <img src="{{ profile.userImage.url }}" id="picture" alt="User Image" style="max-width: 200px; max-height: 200px;">
+        {%endif%}
+        <div>
+            <h1 class="name"> {{profile.nickname}}님 </h1>
+        </div>
+        
+        {%else%}
+        <img src="{% static 'img/accounts/프로필사진.svg' %}" id="picture">
+        <div>
+            <h1 class="name"> 로그인해주세요. </h1>
+        </div>
+        {%endif%}
+
+        <!--로그인/로그아웃 버튼-->
+        <button class="login_logout_btn"> 로그인 / 로그아웃 </button>
+        <!-- 로그인/로그아웃 모달창 -->
+        <div class="modal_box login_logout_modal">
+            <div class="modal_content">
+                <span class="close">&times;</span> <!-- 닫기 버튼 -->
+
+                <!--로그인/로그아웃 버튼-->
+                <button class="login_btn">로그인</button>
+                <a href={%url 'accounts:logout'%}><button class="logout_btn">로그아웃</button></a>
+
+                <!--회원가입 버튼-->
+                <button class="signin_btn">회원가입하기</button>
+            </div>
+        </div>
+
+        <!--로그인 모달창-->
+        <div class="modal_box login_modal"> 
+            <div class="modal_content">
+                <span class="close">&times;</span> <!-- 닫기 버튼 -->
+                <form method="post" action ={%url 'accounts:login'%} class="user_form">
+                    {% csrf_token %}
+                    <h3> 아이디 </h3>
+                    <input type="text" name="username" placeholder="name">
+                    <h3> 비밀번호 </h3>
+                    <input type="password" name="password" placeholder="password">
+                    <input type="submit" value="로그인">
+                </form>
+            </div>
+        </div>
+
+        <!--회원가입 모달창-->
+        <div class="modal_box signin_modal"> 
+            <div class="modal_content">
+                <span class="close">&times;</span> <!-- 닫기 버튼 -->
+                <form method="post" action ={%url 'accounts:signup'%} class="user_form">
+                    {% csrf_token %}
+                    <h1>회원가입</h1>
+                    <h3> 아이디 </h3>
+                    <input type="text" name="username" placeholder="ID">
+                    <h3> 비밀번호 </h3>
+                    <input type="password" name="password1" placeholder="PW">
+                    <h3> 비밀번호 확인 </h3>
+                    <input type="password" name="password2" placeholder="PW">
+                    <input type="submit" value="회원가입 ">
+                </form>
+            </div>
+        </div>
+
+        <!-- 프로필 수정 모달창 -->
+        {% if user.is_authenticated %}
+        <button class="profile_btn"> 프로필 수정 </button>
+        <div class="modal_box profile_modal">
+            <div class="modal_content">
+                <span class="close">&times;</span> <!-- 닫기 버튼 -->
+                    <form action="{% url 'accounts:my' user.id %}" method="post" enctype="multipart/form-data" class="user_form">
+                        {% csrf_token %}
+                        <h2>프로필 수정</h2>
+                        <h3>닉네임</h3>
+                        {{ profile_update_form.nickname }}
+                        {% if profile_update_form.nickname.errors %}
+                            <ul class="profile_update_error_messages">
+                                {% for error in profile_update_form.nickname.errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                        <h3>프로필 사진</h3>
+                        <div class="profile">
+                            <label class="profile_img_button" for="profile_img"> 
+                                {{ profile_update_form.userImage|attr:"id:preview" }}
+                            </label>
+                        </div>
+                        <input type="submit" value="저장">
+                    </form>
+            </div>
+        </div>
+        {%else%}
+        <button class="profile_btn"> 프로필 수정 </button>
+        <!--로그아웃한 상태로 회원가입 수정 버튼 눌렀을 때-->
+        {%endif%}
+
+    </div>
+    {%if user.is_authenticated %}
+
+    <div class="cumulation"> <!--누적 BUSKET-->
+        <h3>누적 BUSKET</h3>
+        <div class="box">
+            <div class="list">
+                <div class="biscuit">
+                <img src="{% static 'img/accounts/비스켓 묶음.svg' %}">
+                </div>
+                <div class="explanation right">
+                    <h1 class="left"> X {{ counts.count }}</h1>
+                    <h1 class="right">총 {{ counts.countP }} 원</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="report"> <!--BUSKET REPORT-->
+        <h3>BUSKET REPORT</h3>
+        <div class="box">
+            <div class="list">
+                <img class="biscuit" src="{% static 'img/accounts/비스켓 1.svg' %}">
+                <div class="explanation right">
+                    {%if  report.max_buy == "-" %}
+                    <h2>아직 모은 비스켓이 <br> </h2>
+                    <h1 class="green">없습니다</h1>
+                    
+                    {%else%}
+                    <h2>가장 많이 모은 비스켓은 <br> </h2>
+                    <h1 class="green">"{{ report.max_buy }}"</h1>
+                    <h2>카테고리입니다.</h2>
+                    {%endif%}
+                </div>
+            </div>
+            <div class="list">
+                <img class="biscuit" src="{% static 'img/accounts/비스켓 2.svg' %}">
+                <div class="explanation left">
+                    {%if  report.min_buy == "-" %}
+                    <h2>아직 모은 비스켓이 <br> </h2>
+                    <h1 class="blue">없습니다</h1>
+                    {%else%}
+                    <h2>가장 적게 모은 비스켓은 <br> </h2>
+                    <h1 class="blue">"{{ report.min_buy }}"</h1>
+                    <h2>카테고리입니다.</h2>
+                    {%endif%}
+                </div>
+            </div>
+            <div class="list">
+                <img class="biscuit" src="{% static 'img/accounts/비스켓 3.svg' %}">
+                <div class="explanation right">
+                    {%if  report.max_nbuy == "-" %}
+                    <h2>아직 모은 비스켓이 <br> </h2>
+                    <h1 class="yellow">없습니다</h1>
+                    {%else%}
+                    <h2>가장 많이 저장한 비스켓은 <br> </h2>
+                    <h1 class="yellow">"{{ report.max_nbuy }}"</h1>
+                    <h2>카테고리입니다.</h2>
+                    {%endif%}
+                </div>
+            </div>
+            <div class="list">
+                <img class="biscuit" src="{% static 'img/accounts/비스켓 4.svg' %}">
+                <div class="explanation left">
+                    {%if  report.min_nbuy == "-" %}
+                    <h2>아직 모은 비스켓이 <br> </h2>
+                    <h1 class="red">없습니다</h1>
+                    {%else%}
+                    <h2>가장 적게 저장한 비스켓은 <br> </h2>
+                    <h1 class="red">"{{ report.min_nbuy }}"</h1>
+                    <h2>카테고리입니다.</h2>
+                    {%endif%}
+                </div>
+            </div>
+            <img class="biscuit right" src="{% static 'img/accounts/비스켓 2.png' %}">
+        </div>
+    </div>
+    {%endif%}
+</div>
+{% endblock %}

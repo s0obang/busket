@@ -1,0 +1,199 @@
+.buy_wrap{
+    width: 90%;
+    margin: 50px auto;
+}
+.main-header .buy{
+    background-color: #FFD950;
+}
+.buy_wrap .bcg-img{
+    position: absolute;
+    top: 150px;
+    right: 50px;
+}
+.buy_wrap .top{
+    padding-top: 50px;
+    margin: 0 auto;
+    width: 1280px;
+}
+.buy_wrap .top .wrap{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+.buy_wrap .title{
+    font-size: 20px;
+    margin: 20px 0;
+    font-weight: 600;
+}
+.buy_wrap .sc1{
+    padding: 50px;
+    width: fit-content;
+    min-width: 600px;
+    max-width: 700px;
+    height: 900px;
+    overflow-x: hidden;
+    border-radius: 30px;
+    background-color: #ffffff6b;
+    border: 1px solid #000;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+
+}
+.buy_wrap .busket{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: fit-content;
+}
+.buy_wrap .busket .item-name{
+    margin-top: 5px;
+    background-color: #FF96AA;
+}
+.buy_wrap .busket input[type="checkbox"] {
+    transform: scale(3); 
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.buy_wrap .busket img{
+    width: 188px;
+}
+.buy_wrap .sc2{
+    display: flex;
+    width: 500px;
+    padding: 20px 0;
+    padding-right: 20px;
+    height: 1000px;
+    flex-direction: column;
+    align-items: center;
+    min-height: 400px;
+    max-height: 900px;
+    
+}
+.buy_wrap .cal{
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+   
+   
+}
+
+.buy_wrap .cal .cost{
+    width: 200px;
+    white-space: nowrap;
+    border-left: 1px solid #000;
+    text-align: end;
+}
+.buy_wrap .cal .line{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    padding:  10px 0;
+    display: block;
+    width: 2px;
+    height: 700px;
+    background-color: #000;
+    overflow-x: hidden;
+}
+.buy_wrap .sum-cost{
+    margin: 20px 0;
+   line-height: 40px;
+    font-size: 40px;
+    font-weight: bold;
+}
+.buy_wrap .add-btn {
+    position: relative;
+}
+.buy_wrap .add-btn button{
+    margin: 20px 0;
+    width: 270px;
+    height: 105px;
+    background-color: rgba(24, 131, 229, 0.8);;
+    font-size: 40px;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px 8px rgba(24, 131, 229, 0.3);
+}
+.buy_wrap .add-btn .count{
+    position: absolute;
+    left: -15px;
+    width: 75px;
+    height: 75px;
+    border-radius: 40px;
+    background-color: #FFD950;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+    border: 0.5px solid #333;
+    
+}
+
+
+
+
+
+::-webkit-scrollbar {
+
+    width: 12px; 
+    height: 12px; 
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888; 
+    border-radius: 10px; 
+    border: 3px solid #f1f1f1; 
+}
+.bot{
+    margin: 30px 0;
+    position: relative;
+}
+.bot .wrap{
+    margin: 0 auto;
+    padding: 50px;
+    width: 1080px;
+    overflow-x: hidden;
+    border-radius: 30px;
+    background-color: #ffffff6b;
+    border: 1px solid #000;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    position: relative;
+}
+.bot .wrap .busket img{
+    width: 188px;
+}
+.bot  .delete{
+    position: absolute;
+    bottom: 20px;
+    right: 80px;
+    border: none;
+    background: none;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.bot  .delete:hover{
+    cursor: pointer;
+}
+.bot{
+    width: 1200px;
+    margin: 0 auto;
+}
