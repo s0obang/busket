@@ -5,6 +5,7 @@
 {% block content %}
 
 <link rel="stylesheet" href="{% static 'css/bucket.css' %}">
+<link rel="stylesheet" href="{% static 'css/not_login.css' %}">
 <script src="{% static 'js/bucket.js' %}"></script>
     
 {%if user.is_authenticated %}
@@ -332,11 +333,23 @@
 
     </div>
     {% else %}
-    <div class="non-login">
-        <h2>로그인 후 이용이 가능한 페이지입니다.</h2>
-        <h3>로그인을 진행하여 BUSKET의 모든 기능을 사용해보세요!</h3>
-        <a href="{% url 'accounts:notloginmy' %}">로그인 하러 가기</a>
-    </div>  
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>로그인이 필요합니다.</title>
+        <link rel="stylesheet" href="{% static 'css/not_login.css' %}">
+    </head>
+
+    <body>
+        <div class="list"> <!--로그인 요청-->
+            <img class="biscuit" src="{% static 'img/accounts/비스켓 2.svg' %}" width="200px">
+            <div class="explanation right">
+                <h1>로그인이 필요한 페이지입니다.</h1>
+                <h2><a href="{% url 'accounts:notloginmy' %}">로그인하러 가기</a></h2> <!--MY 페이지로 연결 필요-->
+            </div>
+        </div>
+    </body>
     {% endif %}
     
 
