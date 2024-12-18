@@ -52,14 +52,14 @@
         <div class="wrap">
             {% for buket in buketsBuy %}
             <div class="busket">
-                <input type="checkbox" name="" id="">
+                
                 <img src="{{ buket.Image.url }}" alt="busket{{ forloop.counter }}" id="popupA"
                     onclick="openPopup('{{ buket.busketName }}', '{{ buket.busketPrice }}','{{ buket.busketShop }}','{{ buket.busketShopUrl }}','{{ buket.busketCategory }}')">
                 <div class="item-name">{{ buket.busketName }}</div>
             </div>
             {% endfor %}
         </div>
-        <button class="delete">BUCKET 비우기</button>
+
     </div>
 </div>
 {% else %}
