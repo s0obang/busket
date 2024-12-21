@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from .models import Profile
 from .forms import ProfileForm
 from django.contrib import messages
+from buket.views import buket_count, busket_category
 
 # from .forms import 
 
@@ -65,6 +66,8 @@ def my(request, user_id):
     context = {
         'profile':profile,
         'profile_update_form':profile_update_form,
-        'user_id':user_id
+        'user_id':user_id,
+        'report': busket_category(request),
+        'counts': buket_count(request),
         }
     return render(request,'my.html',context)

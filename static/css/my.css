@@ -60,16 +60,6 @@
     background-color: rgba(255, 255, 255, 0.7);
 }
 
-/*동일한 닉네임 존재 경고*/
-.profile_update_error_messages {
-    list-style-type: none;
-    margin-left: 10px;
-
-    font-weight: bold;
-    text-align: left;
-    color:#DF3354;
-}
-
 .login_logout_btn, .profile_btn, .signin_btn{
     border: 0;
     margin: 8px;
@@ -78,10 +68,6 @@
 
     font-size: large;
     text-decoration-line: underline;
-}
-
-.modal_content > a{ 
-    text-decoration-line: none; /*로그아웃 밑줄 없애기*/
 }
 
 /*BUSKET 목록*/
@@ -147,3 +133,7 @@
 .blue{
     color:#1883E5;
 }
+
+/* .profile_update_error_messages {
+    프로필 수정 닉네임 중복 오류 메시지 css
+} */

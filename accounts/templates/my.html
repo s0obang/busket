@@ -53,7 +53,7 @@
                 <form method="post" action ={%url 'accounts:login'%} class="user_form">
                     {% csrf_token %}
                     <h3> 아이디 </h3>
-                    <input type="text" name="ID" placeholder="ID">
+                    <input type="text" name="username" placeholder="name">
                     <h3> 비밀번호 </h3>
                     <input type="password" name="password" placeholder="password">
                     <input type="submit" value="로그인">
@@ -113,6 +113,7 @@
         {%endif%}
 
     </div>
+    {%if user.is_authenticated %}
 
     <div class="cumulation"> <!--누적 BUSKET-->
         <h3>누적 BUSKET</h3>
@@ -122,8 +123,8 @@
                 <img src="{% static 'img/accounts/비스켓 묶음.svg' %}">
                 </div>
                 <div class="explanation right">
-                    <h1 class="left"> X 23</h1>
-                    <h1 class="right">총 368,000원</h1>
+                    <h1 class="left"> X {{ counts.count }}</h1>
+                    <h1 class="right">총 {{ counts.countP }} 원</h1>
                 </div>
             </div>
         </div>
@@ -135,36 +136,59 @@
             <div class="list">
                 <img class="biscuit" src="{% static 'img/accounts/비스켓 1.svg' %}">
                 <div class="explanation right">
+                    {%if  report.max_buy == "-" %}
+                    <h2>아직 모은 비스켓이 <br> </h2>
+                    <h1 class="green">없습니다</h1>
+                    
+                    {%else%}
                     <h2>가장 많이 모은 비스켓은 <br> </h2>
-                    <h1 class="green">옷</h1>
+                    <h1 class="green">"{{ report.max_buy }}"</h1>
                     <h2>카테고리입니다.</h2>
+                    {%endif%}
                 </div>
             </div>
             <div class="list">
                 <img class="biscuit" src="{% static 'img/accounts/비스켓 2.svg' %}">
                 <div class="explanation left">
+                    {%if  report.min_buy == "-" %}
+                    <h2>아직 모은 비스켓이 <br> </h2>
+                    <h1 class="blue">없습니다</h1>
+                    {%else%}
                     <h2>가장 적게 모은 비스켓은 <br> </h2>
-                    <h1 class="blue">음식</h1>
+                    <h1 class="blue">"{{ report.min_buy }}"</h1>
                     <h2>카테고리입니다.</h2>
+                    {%endif%}
                 </div>
             </div>
             <div class="list">
                 <img class="biscuit" src="{% static 'img/accounts/비스켓 3.svg' %}">
                 <div class="explanation right">
+                    {%if  report.max_nbuy == "-" %}
+                    <h2>아직 모은 비스켓이 <br> </h2>
+                    <h1 class="yellow">없습니다</h1>
+                    {%else%}
                     <h2>가장 많이 저장한 비스켓은 <br> </h2>
-                    <h1 class="yellow">옷</h1>
+                    <h1 class="yellow">"{{ report.max_nbuy }}"</h1>
                     <h2>카테고리입니다.</h2>
+                    {%endif%}
                 </div>
             </div>
             <div class="list">
                 <img class="biscuit" src="{% static 'img/accounts/비스켓 4.svg' %}">
                 <div class="explanation left">
+                    {%if  report.min_nbuy == "-" %}
+                    <h2>아직 모은 비스켓이 <br> </h2>
+                    <h1 class="red">없습니다</h1>
+                    {%else%}
                     <h2>가장 적게 저장한 비스켓은 <br> </h2>
-                    <h1 class="red">책</h1>
+                    <h1 class="red">"{{ report.min_nbuy }}"</h1>
                     <h2>카테고리입니다.</h2>
+                    {%endif%}
                 </div>
             </div>
+            <img class="biscuit right" src="{% static 'img/accounts/비스켓 2.png' %}">
         </div>
     </div>
+    {%endif%}
 </div>
 {% endblock %}

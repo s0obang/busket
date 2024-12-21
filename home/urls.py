@@ -5,6 +5,6 @@ from .views import home,landing
 app_name='home'
 
 urlpatterns = [
-    path('', home, name='home'),
-    path('landing/', landing, name='landing'),
+    path('home/', home, name='home'),
+    path('', landing, name='landing'),
 ]
