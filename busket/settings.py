@@ -28,8 +28,7 @@ SECRET_KEY = 'django-insecure-!_(=g5+k%gb(81mcxwzflmnt^6(0p&9qus=&cvsj-#6-gwk!a0
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    ".ap-northeast-2.compute.amazonaws.com",
-    ".busket.store",
+    "busket.store",
 ]
 
 
